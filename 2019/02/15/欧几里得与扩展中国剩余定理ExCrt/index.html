@@ -132,14 +132,14 @@
 <meta name="description" content="给定$N$组非负整数$a_i$和$m_i$，求解关于$x$的方程组的最小非负整数解。">
 <meta name="keywords" content="数论,中国剩余定理,扩展欧几里得,扩展中国剩余定理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="欧几里得与扩展中国剩余定理ExCrt">
-<meta property="og:url" content="http://Yeasion.github.io/2019/02/15/扩展中国剩余定理ExCrt/index.html">
+<meta property="og:title" content="扩展中国剩余定理ExCrt">
+<meta property="og:url" content="http://Yeasion.github.io/2019/02/15/欧几里得与扩展中国剩余定理ExCrt/index.html">
 <meta property="og:site_name" content="苏·浅">
 <meta property="og:description" content="给定$N$组非负整数$a_i$和$m_i$，求解关于$x$的方程组的最小非负整数解。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-15T11:05:50.368Z">
+<meta property="og:updated_time" content="2019-02-15T11:07:21.605Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="欧几里得与扩展中国剩余定理ExCrt">
+<meta name="twitter:title" content="扩展中国剩余定理ExCrt">
 <meta name="twitter:description" content="给定$N$组非负整数$a_i$和$m_i$，求解关于$x$的方程组的最小非负整数解。">
 
 
@@ -170,13 +170,13 @@
 
 
 
-  <link rel="canonical" href="http://Yeasion.github.io/2019/02/15/扩展中国剩余定理ExCrt/">
+  <link rel="canonical" href="http://Yeasion.github.io/2019/02/15/欧几里得与扩展中国剩余定理ExCrt/">
 
 
 
 
 
-  <title>欧几里得与扩展中国剩余定理ExCrt | 苏·浅</title>
+  <title>扩展中国剩余定理ExCrt | 苏·浅</title>
   
 
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/02/15/扩展中国剩余定理ExCrt/">
+    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/02/15/欧几里得与扩展中国剩余定理ExCrt/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sue Shallow">
@@ -326,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">欧几里得与扩展中国剩余定理ExCrt</h1>
+          <h1 class="post-title" itemprop="name headline">扩展中国剩余定理ExCrt</h1>
         
 
         <div class="post-meta">
@@ -383,6 +383,7 @@
         <h3 id="欧几里得算法"><a href="#欧几里得算法" class="headerlink" title="欧几里得算法"></a>欧几里得算法</h3><p>为什么要放欧几里得算法，因为这个玩意是扩展欧几里得的铺垫，为什么要将扩展欧几里得，因为这个玩意是中国剩余定理的铺垫。<br>很简单，就是要我们求$gcd(i,j)$。由于证明过程十分繁琐并且没有什么很大的意义，所以便不多管闲事地证明了，结论也很简单：$gcd(i,j) = gcd(j, i % j)$。于是可以不断递归，直到j变成0，然后返回i就可以了，很常见的方法，直接放代码了。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Gcd</span><span class="params">(<span class="keyword">int</span> X, <span class="keyword">int</span> Y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (Y == <span class="number">0</span>) <span class="keyword">return</span> X ;</span><br><span class="line">	<span class="keyword">return</span> Gcd(Y, X % Y) ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="裴蜀定理"><a href="#裴蜀定理" class="headerlink" title="裴蜀定理"></a>裴蜀定理</h3><p>裴蜀定理是扩展欧几里得算法的第二个铺垫，也是一个关于最大公约数的定理。<br>假设有一个线性方程$ax + by = c$，问这个方程有没有整数解，那么根据裴蜀定理我们就知道当$gcd(a,b) | c$的时候线性方程才可能有整数解。简单的证明就是$gcd(a,b)$显然$|(ax+by)$。对于$gcd(a,b)|c$的情况有没有整数解我们便需要用到扩展欧几里得。</p>
 <h3 id="扩展欧几里得"><a href="#扩展欧几里得" class="headerlink" title="扩展欧几里得"></a>扩展欧几里得</h3><p>对于$$ax + by = gcd(a,b)$$，当$a &lt; 0$的时候，式子就可以变成<br>$$|a| (-x) + by = gcd(|a|, b)$$,可以知道这个式子必然是有整数解的。我们可以对于$(a,b)$进行欧几里得算法，得到最大公约数，然后保存辗转相除法中的式子倒推便可以得到$ax + by = gcd(a,b)$的整数解。那么也就是证明了裴蜀定理，同时也给出了计算线性方程的整数解的方法。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Exgcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> &amp; X, <span class="keyword">int</span> &amp; Y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == <span class="number">0</span>) &#123;X = <span class="number">1</span>, Y = <span class="number">0</span> ; <span class="keyword">return</span> a ;&#125;</span><br><span class="line">	<span class="keyword">int</span> R = Exgcd(b, a % b, X, Y) ;</span><br><span class="line">	<span class="keyword">int</span> E = X ; X = Y ; Y = E - a / b * Y ;</span><br><span class="line">	<span class="keyword">return</span> R ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>给定$N$组非负整数$a_i$和$m_i$，求解关于$x$的方程组<br>$$\megin{cases} x \equiv m_1\ ({\rm mod}\ a_1) \ x\equiv m_2\ ({\rm mod}\ a_2) \ … \ x \equiv m_n\ ({\rm mod}\ a_n)\end{cases}$$<br>的最小非负整数解。</p>
 <h3 id="中国剩余定理"><a href="#中国剩余定理" class="headerlink" title="中国剩余定理"></a>中国剩余定理</h3><p>此算法称为扩展中国剩余定理，而中国剩余定理满足$m_i$之间两两互质，我们先从中国剩余定理说起。<br>还是使用上面的式子，假设方程组有解。那么我们设$M = \prod_{i = 1}^nm_i$，（当然也可以设$M = Lct({m_i})$，效果是一样的）且有n个$M_i = M / m_i$，也就是除了第i个以外其他n-1个$m_i$的乘积。以及$t_i = M_i^{-1}$，则我们知道<br>$$t_iM_i \equiv 1 (mod ~ m_i)$$<br>于是有结论：方程组的通解形式为$$\sum _{i = 1}^n a_it_iM_i + kM$$<br>以上是通解形式，而通解有无数个，对于每一个解加上$kM$依然是方程组的解，其中$k \in Z$。</p>
 <h4 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h4><p>关于证明，因为我们知道$$t_iM_i \equiv 1 (mod ~ 1)$$<br>所以有$$a_it_iM_i \equiv a_i (mod ~ m_i)$$<br>而因为所有的$m_i$之间两两互质，因此对于除了$m_i$之外的所有的$m_j$都有$$a_it_iM_i \equiv 0 (mod ~ m_j)$$<br>因此$$x = \sum _{i = 1}^ n a_it_iM_i$$满足$$x = a_it_iM_i + \sum _{j ≠ i}a_jt_j_+Mj \equiv a_i + \sum_{j ≠ i} 0 \equiv a_i (mid ~ m_i)$$<br>因此，$x \equiv a_i (mod ~ m_i)$，所以$x$就是方程的一个特殊解。而至于为什么加上若干个$M$都是解我想就不用我再证明了吧。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> a[MAXN], m[MAXN], n ;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Crt</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> M = <span class="number">1</span> ;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= n ; i ++) M *= m[i] ;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> X = <span class="number">0</span> ;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= N ; i ++) &#123;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> x, y ;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> M_i = M / m[i] ;</span><br><span class="line">		Exgcd(M_i, m[i], x, y) ;</span><br><span class="line">		X = (X + M_i * x * a[i]) % M ;</span><br><span class="line">	&#125;	<span class="keyword">return</span> (X + M) % M ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
