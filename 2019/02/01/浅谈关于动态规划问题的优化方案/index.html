@@ -153,7 +153,7 @@
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/0060lm7Tly1ftxw1nrw0mj30oy0dz74q.jpg">
 <meta property="og:image" content="http://wx3.sinaimg.cn/mw690/0060lm7Tly1ftxw8k74hqj30w30iqwff.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/0060lm7Tly1ftxwapzyaij30v10hp0tk.jpg">
-<meta property="og:updated_time" content="2019-02-12T12:41:57.017Z">
+<meta property="og:updated_time" content="2019-02-16T11:11:41.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈关于动态规划问题的优化方案">
 <meta name="twitter:description" content="$$Dp[i]=a[i]+max_{l[i]">
@@ -437,17 +437,17 @@
 <blockquote>
 <p> $f[i]=d[i]+min_{j=1}^{j&lt;=i}(a[i] \times b[j]+c[j])$</p>
 </blockquote>
-<p> （只是这样的结构而已，比如也可以是$max$，$j$也不一定属于$[1,n]$此处只是一个单独情况）<br> 其中$a[now],b[now],c[now],d[now]$都是关于$now$的函数，并且$b[now]$是单调递增的，那么我们接下来利用数学归纳法证明其决策的单调性。<br> 首先我们假设有两个决策$j$,$k$满足$j&lt;k$并且$k$的决策优于$j$的决策。那么我们有$d[i]+a[i]<em>b[j]+c[j]&gt;=d[i]+a[i]</em>b[k]+c[k]$;消去左右两端的d[i]后可得$a[i]<em>b[j]+c[j]&gt;=a[i]</em>b[k]+c[k]$。<br> 我们知道在$i$后面有状态$i+1$，我们为了简单起见，设$a[now]$是单调递减的，那么我们就是要证明</p>
+<p> （只是这样的结构而已，比如也可以是$max$，$j$也不一定属于$[1,n]$此处只是一个单独情况）<br> 其中$a[now],b[now],c[now],d[now]$都是关于$now$的函数，并且$b[now]$是单调递增的，那么我们接下来利用数学归纳法证明其决策的单调性。<br> 首先我们假设有两个决策$j$,$k$满足$j&lt;k$并且$k$的决策优于$j$的决策。那么我们有$d[i]+a[i]<em>b[j]+c[j]&gt;=d[i]+a[i]</em>b[k]+c[k]$;消去左右两端的d[i]后可得$a[i] \times b[j]+c[j]&gt;=a[i] \times b[k]+c[k]$。<br> 我们知道在$i$后面有状态$i+1$，我们为了简单起见，设$a[now]$是单调递减的，那么我们就是要证明</p>
 <blockquote>
-<p> $d[i+1]+a[i+1]<em>b[j]+c[j]&gt;=d[i+1]+a[i+1]</em>b[k]+c[k]$</p>
+<p> $d[i+1]+a[i+1] \times b[j]+c[j]&gt;=d[i+1]+a[i+1] \times b[k]+c[k]$</p>
 </blockquote>
 <p> 由于$a$是单调递减的，所以$a[i-1]$也可以写成$a[i]-v$的形式，其中$v&gt;0$，那么式子变成：</p>
 <blockquote>
-<p> $d[i+1]+a[i]<em>b[j]+v</em>b[j]+c[j]&gt;=d[i+1]+a[i]<em>b[k]+v</em>b[k]+c[k]$</p>
+<p> $d[i+1]+a[i] ]\times b[j]+v \times b[j]+c[j]&gt;=d[i+1]+a[i] \times b[k]+v \times b[k]+c[k]$</p>
 </blockquote>
 <p> 然后因为$a[i]<em>b[j]+c[j]&gt;=a[i]</em>b[k]+c[k]$，并且$b[k]&gt;b[j]$,所以我们有$v<em>b[k]&gt;v</em>b[j]$，所以我们知道</p>
 <blockquote>
-<p> $d[i+1]+a[i+1]<em>b[j]+c[j]&gt;=d[i+1]+a[i+1]</em>b[k]+c[k]$</p>
+<p> $d[i+1]+a[i+1] \times b[j]+c[j]&gt;=d[i+1]+a[i+1] \times b[k]+c[k]$</p>
 </blockquote>
 <p> 是正确的，<strong>决策单调性也存在</strong>。然后我们将式子展开就可以得到这样一个玩意：</p>
 <blockquote>
