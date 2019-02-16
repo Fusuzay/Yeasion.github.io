@@ -129,20 +129,18 @@
 
 
 
-<meta name="description" content="$$F(N) = \sum_{x|N}f(x)$$ $$f(N) = \sum_{x|N}\mu(x)F(\frac Nx)$$ 在数论中占有重要地位的莫比乌斯反演，可以大大简化运算。本文初步探析莫比乌斯函数的定义，证明和代码实现。">
+<meta name="description" content="给定$N$和$M$，求$$\sum_{i = 1} ^ N \sum_{j = 1}^ M lcm(i, j)$$">
 <meta name="keywords" content="数论,莫比乌斯反演">
 <meta property="og:type" content="article">
-<meta property="og:title" content="莫比乌斯反演初步与实际应用">
-<meta property="og:url" content="http://Yeasion.github.io/2019/02/02/莫比乌斯反演初步和实际应用/index.html">
+<meta property="og:title" content="[国家集训队]Crash的数字表格">
+<meta property="og:url" content="http://Yeasion.github.io/2019/02/16/国家集训队-Crash的数字表格/index.html">
 <meta property="og:site_name" content="苏·浅">
-<meta property="og:description" content="$$F(N) = \sum_{x|N}f(x)$$ $$f(N) = \sum_{x|N}\mu(x)F(\frac Nx)$$ 在数论中占有重要地位的莫比乌斯反演，可以大大简化运算。本文初步探析莫比乌斯函数的定义，证明和代码实现。">
+<meta property="og:description" content="给定$N$和$M$，求$$\sum_{i = 1} ^ N \sum_{j = 1}^ M lcm(i, j)$$">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdn.net/20140416161656796">
-<meta property="og:updated_time" content="2019-02-12T12:41:57.018Z">
+<meta property="og:updated_time" content="2019-02-16T03:45:47.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="莫比乌斯反演初步与实际应用">
-<meta name="twitter:description" content="$$F(N) = \sum_{x|N}f(x)$$ $$f(N) = \sum_{x|N}\mu(x)F(\frac Nx)$$ 在数论中占有重要地位的莫比乌斯反演，可以大大简化运算。本文初步探析莫比乌斯函数的定义，证明和代码实现。">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20140416161656796">
+<meta name="twitter:title" content="[国家集训队]Crash的数字表格">
+<meta name="twitter:description" content="给定$N$和$M$，求$$\sum_{i = 1} ^ N \sum_{j = 1}^ M lcm(i, j)$$">
 
 
 
@@ -172,13 +170,13 @@
 
 
 
-  <link rel="canonical" href="http://Yeasion.github.io/2019/02/02/莫比乌斯反演初步和实际应用/">
+  <link rel="canonical" href="http://Yeasion.github.io/2019/02/16/国家集训队-Crash的数字表格/">
 
 
 
 
 
-  <title>莫比乌斯反演初步与实际应用 | 苏·浅</title>
+  <title>[国家集训队]Crash的数字表格 | 苏·浅</title>
   
 
 
@@ -311,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/02/02/莫比乌斯反演初步和实际应用/">
+    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/02/16/国家集训队-Crash的数字表格/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sue Shallow">
@@ -328,7 +326,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">莫比乌斯反演初步与实际应用</h1>
+          <h1 class="post-title" itemprop="name headline">[国家集训队]Crash的数字表格</h1>
         
 
         <div class="post-meta">
@@ -340,8 +338,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-02T09:48:43+08:00">
-                2019-02-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-16T11:35:36+08:00">
+                2019-02-16
               </time>
             
 
@@ -359,8 +357,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/02/02/莫比乌斯反演初步和实际应用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/02/莫比乌斯反演初步和实际应用/" itemprop="commentsCount"></span>
+                <a href="/2019/02/16/国家集训队-Crash的数字表格/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/16/国家集训队-Crash的数字表格/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -380,7 +378,7 @@
 
           
               <div class="post-description">
-                  $$F(N) = \sum_{x|N}f(x)$$ $$f(N) = \sum_{x|N}\mu(x)F(\frac Nx)$$ 在数论中占有重要地位的莫比乌斯反演，可以大大简化运算。本文初步探析莫比乌斯函数的定义，证明和代码实现。
+                  给定$N$和$M$，求$$\sum_{i = 1} ^ N \sum_{j = 1}^ M lcm(i, j)$$
               </div>
           
 
@@ -397,40 +395,7 @@
       
 
       
-        <h1 id="莫比乌斯反演初步和实际应用"><a href="#莫比乌斯反演初步和实际应用" class="headerlink" title="莫比乌斯反演初步和实际应用"></a>莫比乌斯反演初步和实际应用</h1><h3 id="定义和一般形式及其证明"><a href="#定义和一般形式及其证明" class="headerlink" title="定义和一般形式及其证明"></a>定义和一般形式及其证明</h3><blockquote>
-<p>假设有数论函数关系式$F(N) = \sum_{x|N}f(x)$，则有$f(N) = \sum_{x|N}\mu(x)F(\frac Nx) = \sum_{x|N}\mu(\frac xN)F(x)$</p>
-</blockquote>
-<p>此为基本定义，但是看到这个函数也有限制就是必须是数论函数。，也就是定义域为正整数，对应集合为复数的函数。下面是函数的一般形式。</p>
-<blockquote>
-<p>假设d定义在$[1,∞)$上的复值函数$G(N) = \sum_{x = 1}^NF(\frac Nx)$，则有$F(N) = \sum_{x = 1}^N\mu(x)G(\frac Nx)$</p>
-</blockquote>
-<p>而这个$\mu(x)$函数就是莫比乌斯函数，其定义如下：</p>
-<blockquote>
-<p>$x= 1$时，$\mu(x) = 1$。</p>
-<p>$x = P_1P_2…P_M$，（$P$为互异素数），则$\mu(x) = (-1)^M$</p>
-<p>其他情况下$\mu(x) = 0$</p>
-</blockquote>
-<p>由定义可以得到莫比乌斯函数的两个重要性质：</p>
-<blockquote>
-<p><img src="https://img-blog.csdn.net/20140416161656796" alt="pic"></p>
-<p>对任意<strong>正整数</strong>$N$有$\sum_{x|N}\frac{\mu(x)}{x} = \frac{\varphi(N)}{N}$</p>
-</blockquote>
-<p><strong>证明 :</strong></p>
-<p>设有$\sum_{x|N}\mu(x) = [N = 1]$，且$f(N) = \sum_{x|N}[\frac Nx = 1]f(x)$，代入得$f(N) = \sum_{x|N}\sum_{y|\frac Nx}\mu(y)f(x)$。</p>
-<p>由于$\sum_{x|N}\sum_{y|\frac Nx}$的限制条件为$xy|N$，所以等式写成:$$f(N) = \sum_{y|N}\mu(y)\sum_{x|\frac Ny}f(x) = \sum_{y|N}\mu(y)F(\frac Ny)$$</p>
-<p>证明完毕。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>用线性筛法求莫比乌斯函数，时间复杂度$O(N)$</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(V, <span class="number">0</span>, <span class="keyword">sizeof</span>(V)) ;</span><br><span class="line">	Mu[<span class="number">1</span>] = <span class="number">1</span> ; Tot = <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">MU</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt; N ; i ++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (! V[i]) P[++ Tot] = i, Mu[i] = - <span class="number">1</span> ;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt;= Tot &amp;&amp; P[j] &lt; N ; j ++) &#123;</span><br><span class="line">			V[i * P[j]] = <span class="number">1</span> ;</span><br><span class="line">			<span class="keyword">if</span> (i % P[j]) Mu[i * P[j]] = - Mu[i] ;</span><br><span class="line">			<span class="keyword">else</span> &#123;Mu[i * P[j]] = <span class="number">0</span> ; <span class="keyword">break</span> ; &#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="例题：YY的GCD"><a href="#例题：YY的GCD" class="headerlink" title="例题：YY的GCD"></a>例题：YY的GCD</h3><blockquote>
-<p>给定$N, M$，求所有的$X \leq N,~Y \leq M$中$gcd(X, Y)$是质数的点对有多少对。</p>
-</blockquote>
-<p>类似于一个模板题，因为其思维难度不是很大。考虑公式化题目描述，即求：$$\sum_{X = 1}^N \sum_{Y = 1}^M [gcd(i,j) == P]$$</p>
-<p>设$f(x)​$为满足$gcd(X, Y) = X​$的$(X, Y)​$的对数，$F(X)​$为满足$X|gcd(X, Y)​$二点$(X, Y)​$的对数。得到$$F(N) = \sum_{x|N}f(x)​$$$，所以根据莫比乌斯反演定理，得​$$f(N) = \sum_{x|N}\mu(\frac xN)F(x) =\sum_{x|N}\mu(\frac xN)\frac{N \times M}{X^2}​$$，</p>
-<p>而题目要求其$gcd(X,Y)$是一个质数也就是说$$Ans = \sum_P^{min(N, M} \sum_i^N\sum_j^M[gcd(i,j) = P] = \sum_P^{Minn(N,M)}f(P)$$</p>
-<p>设$T = PX$，则式子变为$$\sum_{T = 1}^{Min(N,M)}\frac{N \times M}{T^2}(\sum_{G|T}\mu(\frac TG))$$</p>
-<p>于是为了提高速度，可以预处理$\sum_{G|T}\mu(\frac TG)$。于是此题就以较快得速度解决了。</p>
-<p>但是如果是多组数据还是有可能会$TLE$，所以如果想要更快，还可以使用整除分块。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">10000010</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> T, N, M, V[MAXN], P[MAXN], Mu[MAXN], Tot ;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> S[MAXN], Ans, G[MAXN] ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">long</span> <span class="keyword">long</span>  <span class="title">Read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> X = <span class="number">0</span>, F = <span class="number">1</span> ; <span class="keyword">char</span> ch = getchar() ;</span><br><span class="line">	<span class="keyword">while</span> (ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span>) F = (ch == <span class="string">'-'</span> ? - <span class="number">1</span> : <span class="number">1</span>), ch = getchar() ;</span><br><span class="line">	<span class="keyword">while</span> (ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>) X=(X&lt;&lt;<span class="number">1</span>)+(X&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>), ch = getchar() ;</span><br><span class="line">	<span class="keyword">return</span> X * F ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">MU</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(V, <span class="number">0</span>, <span class="keyword">sizeof</span>(V)) ;</span><br><span class="line">	Mu[<span class="number">1</span>] = <span class="number">1</span> ; Tot = <span class="number">0</span> ;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span> ; i &lt; MAXN ; i ++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (! V[i]) P[Tot ++] = i, Mu[i] = - <span class="number">1</span>, G[i] = <span class="number">1</span> ;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; Tot &amp;&amp; i * P[j] &lt; MAXN ; j ++) &#123;</span><br><span class="line">			V[i * P[j]] = <span class="number">1</span> ;</span><br><span class="line">			<span class="keyword">if</span> (i % P[j]) Mu[i * P[j]] = - Mu[i],</span><br><span class="line">				G[i * P[j]] = Mu[i] - G[i] ; <span class="keyword">else</span> &#123;</span><br><span class="line">				Mu[i * P[j]] = <span class="number">0</span> ; G[i * P[j]] = Mu[i] ;</span><br><span class="line">				<span class="keyword">break</span> ;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt; MAXN ; i ++) S[i] = S[i - <span class="number">1</span>] + G[i] ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	MU() ;</span><br><span class="line">	T = Read() ; <span class="keyword">while</span> (T --) &#123; </span><br><span class="line">		Ans = <span class="number">0</span> ;</span><br><span class="line">		N = Read(), M = Read() ; </span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, j ; i &lt;= min(N, M) ; i = j + <span class="number">1</span>) &#123;</span><br><span class="line">			j = min(N / (N / i), M / (M / i)) ;</span><br><span class="line">			Ans += (N / i) * (M / i) * (S[j] - S[i - <span class="number">1</span>]) ;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, Ans) ;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p><a href="https://www.luogu.org/problemnew/show/P1829" target="_blank" rel="noopener">Link</a><br>如题，给定$N$和$M$，求$$\sum_{i = 1} ^ N \sum_{j = 1}^ M lcm(i, j)$$<br>有人说这道题是BZOJ上面的JZPTAB，但其实不是，JZBTAB虽然具体问题和改题是一样的，但是那道题是多组询问，比这道题还要难一些。<br>首先我们知道$lcm(i,j) = \frac{i \times j}{gcd(i,j)}$，那么题目转化为<br>$$\sum_{i = 1} ^ N \sum_{j = 1}^ M \frac{i \times j}{gcd(i,j)$$<br>然后我们枚举最大公约数，式子转化为<br>$$\sum_{d = 1}^{min(N,M)}\sum_{i = 1} ^ N \sum_{j = 1}^ M \frac{i \times j}{d}[gcd(i,j) == d]$$<br>提出d,式子变成<br>$$\sum_{d = 1}^{min(N,M)} d \sum_{i = 1}^{N / d} \sum_{j = 1} ^ {M / d}[gcd(i, j) == 1] \times ij$$</p>
 
       
     </div>
@@ -463,8 +428,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/01/对插值法及拉格朗日插值多项式的初步理解运用/" rel="next" title="对插值法及拉格朗日插值多项式的初步理解运用">
-                <i class="fa fa-chevron-left"></i> 对插值法及拉格朗日插值多项式的初步理解运用
+              <a href="/2019/02/15/欧几里得与扩展中国剩余定理ExCrt/" rel="next" title="欧几里得与扩展中国剩余定理ExCrt">
+                <i class="fa fa-chevron-left"></i> 欧几里得与扩展中国剩余定理ExCrt
               </a>
             
           </div>
@@ -472,10 +437,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/13/SDOI2015-约数个数和/" rel="prev" title="[SDOI2015]约数个数和">
-                [SDOI2015]约数个数和 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -533,17 +494,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -683,22 +635,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#莫比乌斯反演初步和实际应用"><span class="nav-number">1.</span> <span class="nav-text">莫比乌斯反演初步和实际应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义和一般形式及其证明"><span class="nav-number">1.0.1.</span> <span class="nav-text">定义和一般形式及其证明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">1.1.</span> <span class="nav-text">代码实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#例题：YY的GCD"><span class="nav-number">1.1.1.</span> <span class="nav-text">例题：YY的GCD</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -928,7 +864,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitment({
-            id: '1549072123000', 
+            id: '1550288136000', 
             owner: 'Yeasion',
             repo: 'gitment-comments',
             
