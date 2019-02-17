@@ -116,7 +116,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="动态规划,图论,最短路,">
 
 
 
@@ -129,17 +129,18 @@
 
 
 
-<meta name="description" content="title: Sue Shallow – 苏浅 date: 2019-2-1 11:00:00  浪特别大，快要把木桨侵蚀断裂了。船上栏杆有些破损了，船身也一摇一摆地晃着。 离岸边很远了，我想要看一看大海里美丽的暴风雨。水早便不浅了，现在下船怕是都能淹死了。这让我有点慌张，但还是保持镇定。又不是不会游泳的。用木桨的船进不了深海，我便只能划到这了。 我努力地伸着脖子向里面仰望，里面微微晃动的是远处">
-<meta property="og:type" content="website">
-<meta property="og:title" content="苏·浅">
-<meta property="og:url" content="http://Yeasion.github.io/about/index.html">
+<meta name="description" content="给定$N$，${a_i}$一个正整数$B$的范围$B_l,B_r$，求$$\sum_{i = 1}^N a_Nx_N = B$$在$B_l,B_r$范围中有多少$B$使等式存在非负整数解。">
+<meta name="keywords" content="动态规划,图论,最短路">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[国家集训队]墨墨的等式">
+<meta property="og:url" content="http://Yeasion.github.io/2019/02/17/国家集训队-墨墨的等式/index.html">
 <meta property="og:site_name" content="苏·浅">
-<meta property="og:description" content="title: Sue Shallow – 苏浅 date: 2019-2-1 11:00:00  浪特别大，快要把木桨侵蚀断裂了。船上栏杆有些破损了，船身也一摇一摆地晃着。 离岸边很远了，我想要看一看大海里美丽的暴风雨。水早便不浅了，现在下船怕是都能淹死了。这让我有点慌张，但还是保持镇定。又不是不会游泳的。用木桨的船进不了深海，我便只能划到这了。 我努力地伸着脖子向里面仰望，里面微微晃动的是远处">
+<meta property="og:description" content="给定$N$，${a_i}$一个正整数$B$的范围$B_l,B_r$，求$$\sum_{i = 1}^N a_Nx_N = B$$在$B_l,B_r$范围中有多少$B$使等式存在非负整数解。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-12T12:41:57.018Z">
+<meta property="og:updated_time" content="2019-02-17T06:45:28.783Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="苏·浅">
-<meta name="twitter:description" content="title: Sue Shallow – 苏浅 date: 2019-2-1 11:00:00  浪特别大，快要把木桨侵蚀断裂了。船上栏杆有些破损了，船身也一摇一摆地晃着。 离岸边很远了，我想要看一看大海里美丽的暴风雨。水早便不浅了，现在下船怕是都能淹死了。这让我有点慌张，但还是保持镇定。又不是不会游泳的。用木桨的船进不了深海，我便只能划到这了。 我努力地伸着脖子向里面仰望，里面微微晃动的是远处">
+<meta name="twitter:title" content="[国家集训队]墨墨的等式">
+<meta name="twitter:description" content="给定$N$，${a_i}$一个正整数$B$的范围$B_l,B_r$，求$$\sum_{i = 1}^N a_Nx_N = B$$在$B_l,B_r$范围中有多少$B$使等式存在非负整数解。">
 
 
 
@@ -169,13 +170,13 @@
 
 
 
-  <link rel="canonical" href="http://Yeasion.github.io/about/">
+  <link rel="canonical" href="http://Yeasion.github.io/2019/02/17/国家集训队-墨墨的等式/">
 
 
 
 
 
-  <title> | 苏·浅</title>
+  <title>[国家集训队]墨墨的等式 | 苏·浅</title>
   
 
 
@@ -296,59 +297,180 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/02/17/国家集训队-墨墨的等式/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sue Shallow">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon-16x16-next.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏·浅">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline"></h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body han-init-context">
         
         
-          <hr>
-<p>title: Sue Shallow – 苏浅</p>
-<p>date: 2019-2-1 11:00:00</p>
-<hr>
-<p>浪特别大，快要把木桨侵蚀断裂了。船上栏杆有些破损了，船身也一摇一摆地晃着。</p>
-<p>离岸边很远了，我想要看一看大海里美丽的暴风雨。水早便不浅了，现在下船怕是都能淹死了。这让我有点慌张，但还是保持镇定。又不是不会游泳的。用木桨的船进不了深海，我便只能划到这了。</p>
-<p>我努力地伸着脖子向里面仰望，里面微微晃动的是远处的暴风雨么？海鸥早就不往里飞了，害怕雨水打湿翅膀。大海就是一个没意思的地方，它太大了，大得枯燥。我想念家乡的浅浅的流水，载着我浅浅的小船，漂，漂，漂的，便走向稻花掩盖最深处的那些地方。</p>
-<p>我突然感到厌烦了，便划着我有些残破的小船，朝岸边划去。看着水的颜色由沉闷的暗蓝，变成淡淡天空的颜色。无论哪里的水，映衬的都是天啊。而天是连在一起的，我向走向那蔚蓝的天，骑一片薄薄的云彩，回到来时的地方，抱住我可爱的过往，抓住偷偷溜走的光。</p>
-<p>我浅浅的岸啊，送我回故乡吧。</p>
-<hr>
-<p>终于搬到新博客啦，开心！</p>
-<p>大多数以前的东西还是会挂在博客园，毕竟自己博客园的装裱也高了这么长时间了，文章随笔啥的也不少，搬运太麻烦了，于是不打算搬运。如果想要看以前的博客还请移步<a href="https://www.cnblogs.com/Yeasio-Nein" target="_blank" rel="noopener">博客园</a>。</p>
-<p>以后较高阶的算法，题解之类就放在这了，由博客园逐渐向github.io转移！</p>
-<hr>
-<p>交代一下在新博客里面会看到的更新性的内容：</p>
+          <h1 class="post-title" itemprop="name headline">[国家集训队]墨墨的等式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-17T09:06:24+08:00">
+                2019-02-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/17/国家集训队-墨墨的等式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/17/国家集训队-墨墨的等式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> View
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+
+          
+              <div class="post-description">
+                  给定$N$，${a_i}$一个正整数$B$的范围$B_l,B_r$，求$$\sum_{i = 1}^N a_Nx_N = B$$在$B_l,B_r$范围中有多少$B$使等式存在非负整数解。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>题意大概就是求$B_l,B_r$范围内$B$的个数使等式<br>$$\sum_{i = 1}^N a_Nx_N = B$$存<br>在非负整数解。其实转化一下题意也就是</p>
+<blockquote>
+<p>在N种物品中任意选择，物品有一个价值，使得最后的总价值处于给定区间内。</p>
+</blockquote>
+<p>这很显然是一个完全背包，而且是类似于一种模板题，但是这道题的数据范围是$B \leq 10^{12}$，因此这么做显然是不行的，但是我们可以从完全背包的视角出发思考题目。<br>我们取出最小的$a$为$a_{min}$,并且假设我们现在知道了一种方案，物体的总重为$D[i]$，并且满足$$K ~mod~ a_{min} = i$$，在这两种条件下$D[i]$为最小值。<br>那么显然，对于任意一个同样满足上述两个条件的总重X，$X \leq D[i]$，并且因为$X ~mod~ a_{min} = D[i] ~mod~ a_{min}$，所以可以知道$X$方案可以由$D[i]$方案加上若干个$a_{min}$得到。<br>现在我们考虑加入一个物体$Now$，那么有$$D[(i + Now) ~mod~ a_{min}]$$可以从$d[i] + Now$而来。于是可以考虑从i向$(i + Now) ~mod~ a_{min}$连一条比边权为$Now$的边，而求$D[i]$的最小值也就被转化成了最短路问题。<br>那么算法就得出来了：</p>
+<blockquote>
 <ol>
-<li>每篇博客都附有英文版，在每篇页面的下方。有时博客过长也有可能会新建另外的博客。</li>
-<li>大多数文章的代码可能会只附有重要的部分，整个题的代码可能就没有了，甚至整道题只有解析。</li>
-<li>在新博客中有时会加一些新鲜东西，比如知识点解析，笔记性知识之类的。</li>
+<li>首先求一下$a_{min}$的最小值保存下来。</li>
+<li>跑最短路，预处理出D数组。</li>
+<li>枚举所有的D，计算mod T = i的数在区间$B_l,B_r$中有多少个。</li>
 </ol>
-<hr>
-<h4 id="Sue-Shallow"><a href="#Sue-Shallow" class="headerlink" title="Sue Shallow"></a>Sue Shallow</h4><p><a href="https://www.github.com/Yeasion" target="_blank" rel="noopener">Github</a>  <a href="https://Yeasion.github.io">Blog</a> <a href="1697482892">QQ</a> <a href="SueShallow.lofter.com">Lofter</a></p>
-<p>Email : <a href="mailto:Yeasion@outlook.com" target="_blank" rel="noopener">Yeasion@outlook.com</a></p>
-<p>$Bilibili$请去找<a href="http://space.bilibili.com/39826692?" target="_blank" rel="noopener">Soul丶阿宇索桐</a>先生谢谢～</p>
-<p>$Luogu$请去找<a href="https://www.luogu.org/space/show?uid=60528" target="_blank" rel="noopener">Yeasion</a>谢谢~</p>
-<p>要微信号的请去死谢谢~</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">15</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXM = <span class="number">500010</span> ;</span><br><span class="line">LL Inf = (LL)<span class="number">1</span> &lt;&lt; <span class="number">60</span> ;</span><br><span class="line"></span><br><span class="line">LL N, L, R, a[MAXN], H[MAXN], Tot, D[MAXM] ;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span><span class="keyword">int</span> F, T, L, Next ;&#125; E[MAXN] ;</span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q ; <span class="keyword">bool</span> F[MAXM] ; LL K, Ans ;   </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> F, <span class="keyword">int</span> T, <span class="keyword">int</span> L)</span> </span>&#123;</span><br><span class="line">    E[++ Tot].F = F ; E[Tot].T = T ; E[Tot].L = L ;</span><br><span class="line">    E[Tot].Next = H[F] ; H[F] = Tot ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Spfa</span><span class="params">(<span class="keyword">int</span> S)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(F, <span class="number">0</span>, <span class="keyword">sizeof</span>(F)) ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt; K ; i ++) D[i] = Inf ;</span><br><span class="line">    D[S] = <span class="number">0</span> ; F[S] = <span class="number">1</span> ; Q.push(S) ;</span><br><span class="line">    <span class="keyword">while</span> (! Q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> Now = Q.front() ; Q.pop() ; F[Now] = <span class="number">0</span> ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= N ; i ++) &#123;</span><br><span class="line">            <span class="keyword">int</span> T = (Now + a[i]) % K ;</span><br><span class="line">            <span class="keyword">if</span> (D[T] &gt; D[Now] + a[i]) &#123;</span><br><span class="line">                D[T] = D[Now] + a[i] ;</span><br><span class="line">                <span class="keyword">if</span> (! F[T]) Q.push(T), F[T] = <span class="number">1</span> ;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">Read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    LL X = <span class="number">0</span>, F = <span class="number">1</span> ; <span class="keyword">char</span> ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span>) F = (ch == <span class="string">'-'</span> ? - <span class="number">1</span> : <span class="number">1</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>) X=(X&lt;&lt;<span class="number">1</span>)+(X&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">return</span> X * F ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    N = Read(), L = Read(), R = Read() ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= N ; i ++) a[i] = Read() ;</span><br><span class="line">    sort (a + <span class="number">1</span>, a + N + <span class="number">1</span>) ; K = a[<span class="number">1</span>] ; <span class="comment">//储存最小的a。</span></span><br><span class="line">    Spfa(<span class="number">0</span>) ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; K ; i ++)</span><br><span class="line">        <span class="keyword">if</span> (D[i] != Inf) D[i] = (D[i] - i) / K ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; K ; i ++)</span><br><span class="line">        <span class="keyword">if</span> (D[i] != Inf) &#123;</span><br><span class="line">            <span class="keyword">int</span> K1 = (L - i - <span class="number">1</span>) / K - D[i] + <span class="number">1</span> ;</span><br><span class="line">            <span class="keyword">int</span> K2 = (R - i) / K - D[i] + <span class="number">1</span> ;</span><br><span class="line">            Ans = Ans - max(K1, <span class="number">0</span>) + max(K2, <span class="number">0</span>) ;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld"</span>, Ans) ; <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这种在求解用${a_i}$能组成多少个在$B_l, B_r$范围内的数的问题其实是很经典的图论问题，像这种建图困难，但是最短路很好跑的题目便可以称为是建图题了。</p>
 
-        
-      </div>
-      
-      
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
+          
+            <a href="/tags/图论/" rel="tag"># 图论</a>
+          
+            <a href="/tags/最短路/" rel="tag"># 最短路</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/16/国家集训队-Crash的数字表格/" rel="next" title="[国家集训队]Crash的数字表格">
+                <i class="fa fa-chevron-left"></i> [国家集训队]Crash的数字表格
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -387,17 +509,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -537,22 +650,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sue-Shallow"><span class="nav-number">1.</span> <span class="nav-text">Sue Shallow</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -782,7 +879,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitment({
-            id: '1549975317018', 
+            id: '1550365584000', 
             owner: 'Yeasion',
             repo: 'gitment-comments',
             
