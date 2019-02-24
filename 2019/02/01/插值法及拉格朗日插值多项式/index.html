@@ -132,15 +132,15 @@
   <meta name="description" content="$$l_k(x) = \prod_{i = 0,i ≠ k}^{N} \frac{x - x_i}{x_k - x_i}$$ $$L_n(x) = \sum_{k = 0}^ny_kl_k(x)$$ 插值，适用于解决复杂、难于计算的函数表达式问题的有力手段，更有时根本没有具体的函数，只有对应采样点的几个函数值，而要求计算非采样点的函数值的问题，此时插值法就可以构造出该函数的近似表达式来解决问题。本">
 <meta name="keywords" content="数论,拉格朗日插值法,差分法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="对插值法及拉格朗日插值多项式的初步理解运用">
-<meta property="og:url" content="http://Yeasion.github.io/2019/02/01/对插值法及拉格朗日插值多项式的初步理解运用/index.html">
+<meta property="og:title" content="插值法及拉格朗日插值多项式">
+<meta property="og:url" content="http://Yeasion.github.io/2019/02/01/插值法及拉格朗日插值多项式/index.html">
 <meta property="og:site_name" content="苏·浅">
 <meta property="og:description" content="$$l_k(x) = \prod_{i = 0,i ≠ k}^{N} \frac{x - x_i}{x_k - x_i}$$ $$L_n(x) = \sum_{k = 0}^ny_kl_k(x)$$ 插值，适用于解决复杂、难于计算的函数表达式问题的有力手段，更有时根本没有具体的函数，只有对应采样点的几个函数值，而要求计算非采样点的函数值的问题，此时插值法就可以构造出该函数的近似表达式来解决问题。本">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://pic.superbed.cn/item/5c5427615f3e509ed9a278be">
-<meta property="og:updated_time" content="2019-02-12T12:41:57.017Z">
+<meta property="og:updated_time" content="2019-02-24T11:18:16.498Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="对插值法及拉格朗日插值多项式的初步理解运用">
+<meta name="twitter:title" content="插值法及拉格朗日插值多项式">
 <meta name="twitter:description" content="$$l_k(x) = \prod_{i = 0,i ≠ k}^{N} \frac{x - x_i}{x_k - x_i}$$ $$L_n(x) = \sum_{k = 0}^ny_kl_k(x)$$ 插值，适用于解决复杂、难于计算的函数表达式问题的有力手段，更有时根本没有具体的函数，只有对应采样点的几个函数值，而要求计算非采样点的函数值的问题，此时插值法就可以构造出该函数的近似表达式来解决问题。本">
 <meta name="twitter:image" content="https://pic.superbed.cn/item/5c5427615f3e509ed9a278be">
 
@@ -151,7 +151,7 @@
 
 
 
-  <link rel="canonical" href="http://Yeasion.github.io/2019/02/01/对插值法及拉格朗日插值多项式的初步理解运用/">
+  <link rel="canonical" href="http://Yeasion.github.io/2019/02/01/插值法及拉格朗日插值多项式/">
 
 
 
@@ -161,7 +161,7 @@
   };
 </script>
 
-  <title>对插值法及拉格朗日插值多项式的初步理解运用 | 苏·浅</title>
+  <title>插值法及拉格朗日插值多项式 | 苏·浅</title>
   
 
 
@@ -378,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/02/01/对插值法及拉格朗日插值多项式的初步理解运用/">
+    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/02/01/插值法及拉格朗日插值多项式/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sue Shallow">
@@ -395,7 +395,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">对插值法及拉格朗日插值多项式的初步理解运用
+          <h1 class="post-title" itemprop="name headline">插值法及拉格朗日插值多项式
 
               
             
@@ -438,7 +438,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-12 20:41:57" itemprop="dateModified" datetime="2019-02-12T20:41:57+08:00">2019-02-12</time>
+                <time title="修改时间：2019-02-24 19:18:16" itemprop="dateModified" datetime="2019-02-24T19:18:16+08:00">2019-02-24</time>
               
             
           </span>
@@ -456,8 +456,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/02/01/对插值法及拉格朗日插值多项式的初步理解运用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/01/对插值法及拉格朗日插值多项式的初步理解运用/" itemprop="commentCount"></span>
+                <a href="/2019/02/01/插值法及拉格朗日插值多项式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/01/插值法及拉格朗日插值多项式/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -641,8 +641,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/01/浅谈关于动态规划问题的优化方案/" rel="next" title="浅谈关于动态规划问题的优化方案">
-                <i class="fa fa-chevron-left"></i> 浅谈关于动态规划问题的优化方案
+              <a href="/2019/02/01/关于动态规划问题的优化方案/" rel="next" title="关于动态规划问题的优化方案">
+                <i class="fa fa-chevron-left"></i> 关于动态规划问题的优化方案
               </a>
             
           </div>
