@@ -129,18 +129,18 @@
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-  <meta name="description" content="粉刷$N$条木板，每条木板有$M$个格子，只能被涂成蓝色或者红色，每次粉刷只能选择一条木板上的一段连续的格子。每个格子最多只能被粉刷一次。最多能粉刷$T$次，求最多能粉刷多少个格子。">
-<meta name="keywords" content="动态规划,背包">
+  <meta name="description" content="定义超级和弦为区间内长度处于$[L,R]$之间的一段连续区间和。两个超级和弦相同当且仅当这两个超级和弦所包含的音符集合相同。要求在序列中选出K个不同的超级和弦，使得所有超级和弦的和最大。">
+<meta name="keywords" content="贪心,前缀和,堆,ST表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[SCOI2009]粉刷匠">
-<meta property="og:url" content="http://Yeasion.github.io/2019/03/03/SCOI2009-粉刷匠/index.html">
+<meta property="og:title" content="[NOI2010]超级钢琴">
+<meta property="og:url" content="http://Yeasion.github.io/2019/03/03/NOI2010-超级钢琴/index.html">
 <meta property="og:site_name" content="苏·浅">
-<meta property="og:description" content="粉刷$N$条木板，每条木板有$M$个格子，只能被涂成蓝色或者红色，每次粉刷只能选择一条木板上的一段连续的格子。每个格子最多只能被粉刷一次。最多能粉刷$T$次，求最多能粉刷多少个格子。">
+<meta property="og:description" content="定义超级和弦为区间内长度处于$[L,R]$之间的一段连续区间和。两个超级和弦相同当且仅当这两个超级和弦所包含的音符集合相同。要求在序列中选出K个不同的超级和弦，使得所有超级和弦的和最大。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-03T06:39:22.631Z">
+<meta property="og:updated_time" content="2019-03-04T09:39:52.838Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[SCOI2009]粉刷匠">
-<meta name="twitter:description" content="粉刷$N$条木板，每条木板有$M$个格子，只能被涂成蓝色或者红色，每次粉刷只能选择一条木板上的一段连续的格子。每个格子最多只能被粉刷一次。最多能粉刷$T$次，求最多能粉刷多少个格子。">
+<meta name="twitter:title" content="[NOI2010]超级钢琴">
+<meta name="twitter:description" content="定义超级和弦为区间内长度处于$[L,R]$之间的一段连续区间和。两个超级和弦相同当且仅当这两个超级和弦所包含的音符集合相同。要求在序列中选出K个不同的超级和弦，使得所有超级和弦的和最大。">
 
 
 
@@ -149,7 +149,7 @@
 
 
 
-  <link rel="canonical" href="http://Yeasion.github.io/2019/03/03/SCOI2009-粉刷匠/">
+  <link rel="canonical" href="http://Yeasion.github.io/2019/03/03/NOI2010-超级钢琴/">
 
 
 
@@ -159,7 +159,7 @@
   };
 </script>
 
-  <title>[SCOI2009]粉刷匠 | 苏·浅</title>
+  <title>[NOI2010]超级钢琴 | 苏·浅</title>
   
 
 
@@ -393,7 +393,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/03/03/SCOI2009-粉刷匠/">
+    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/03/03/NOI2010-超级钢琴/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sue Shallow">
@@ -410,7 +410,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[SCOI2009]粉刷匠
+          <h1 class="post-title" itemprop="name headline">[NOI2010]超级钢琴
 
               
             
@@ -436,12 +436,24 @@
                 
               
 
-              <time title="创建时间：2019-03-03 09:00:39 / 修改时间：14:39:22" itemprop="dateCreated datePublished" datetime="2019-03-03T09:00:39+08:00">2019-03-03</time>
+              <time title="创建时间：2019-03-03 14:43:20" itemprop="dateCreated datePublished" datetime="2019-03-03T14:43:20+08:00">2019-03-03</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-04 17:39:52" itemprop="dateModified" datetime="2019-03-04T17:39:52+08:00">2019-03-04</time>
               
             
           </span>
@@ -465,7 +477,7 @@
                   ，
                 
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/题解/各省省选/" itemprop="url" rel="index"><span itemprop="name">各省省选</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/题解/NOI/" itemprop="url" rel="index"><span itemprop="name">NOI</span></a></span>
 
                 
                 
@@ -484,8 +496,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/03/03/SCOI2009-粉刷匠/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/03/SCOI2009-粉刷匠/" itemprop="commentCount"></span>
+                <a href="/2019/03/03/NOI2010-超级钢琴/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/03/NOI2010-超级钢琴/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -499,7 +511,7 @@
           
 
           
-            <div class="post-description">粉刷$N$条木板，每条木板有$M$个格子，只能被涂成蓝色或者红色，每次粉刷只能选择一条木板上的一段连续的格子。每个格子最多只能被粉刷一次。最多能粉刷$T$次，求最多能粉刷多少个格子。</div>
+            <div class="post-description">定义超级和弦为区间内长度处于$[L,R]$之间的一段连续区间和。两个超级和弦相同当且仅当这两个超级和弦所包含的音符集合相同。要求在序列中选出K个不同的超级和弦，使得所有超级和弦的和最大。</div>
           
 
         </div>
@@ -515,13 +527,7 @@
       
 
       
-        <p><a href="https://www.luogu.org/problemnew/show/P4158" target="_blank" rel="noopener">Link</a><br>2019的四川NOI题目，很经典的动态规划题目。<br>首先设$Dp[i][j][k][l]$表示当到达$(i,~j)$点的时候恰好用了$k$次粉刷的机会，其中$l$只有$0$和$1$两种取值，因为题目中说的一个格子如果没有被粉刷或者粉刷上了错误的颜色都算粉刷错误，因此我们可以将这两种情况分开来看，统一成$0$，如果粉刷对了就是$1$。<br>状态转移：<br>对于每一次换木板的时候要刷一次，那么最优情况下，也就是跟前一个木板完全一样的情况下，我们将上一块木板的$Dp$转移过来就可以了。记住要把$1$和$0$的状态都转移过来。<br>$$<br>Dp[i][j][k][0] = max(Dp[i][M][k - 1][0], Dp[i][M][k - 1][1]) ;<br>$$<br>$$<br>Dp[i][j][k][1] = max(Dp[i][M][k - 1][0], Dp[i][M][k - 1][1]) + 1 ;<br>$$<br>然后对于上一个格子和当前格子的颜色都一样的话，我们就像换行一样进行处理。将上一个格子的状态直接转移过来就可以了。<br>$$<br>Dp[i][j][k][1] = Dp[i][j - 1][k][1] + 1,<br>$$<br>$$<br>Dp[i][j][k][0] = Dp[i][j - 1][k][0] ;<br>$$<br>如果上一个格子的颜色与当前格子的颜色不一样，那么可以选择</p>
-<ol>
-<li>继续上一个格子的颜色，不减少机会，但是当前的格子就错误了。</li>
-<li>减少一次机会，换一个k，当前的格子粉刷正确。<br>$$<br>Dp[i][j][k][1] = max(Dp[i][j - 1][k - 1][1] + 1, Dp[i][j - 1][k][0] + 1) ;<br>$$<br>$$<br>Dp[i][j][k][0] = max(Dp[i][j - 1][k][1], Dp[i][j - 1][k - 1][0]) ;<br>$$<br>所以从思路上来说是非常简单的，只要你能想到是几维的Dp，接下来的转移方程基本是水到渠成的。<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">60</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXM = <span class="number">60</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXT = <span class="number">2510</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M, K, Color[MAXN][MAXM], Dp[MAXN][MAXM][MAXT][<span class="number">2</span>], Ans ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> X = <span class="number">0</span>, F = <span class="number">1</span> ; <span class="keyword">char</span> ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span>) F = (ch == <span class="string">'-'</span> ? - <span class="number">1</span> : <span class="number">1</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>) X=(X&lt;&lt;<span class="number">1</span>)+(X&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">return</span> X * F ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    N = Read(), M = Read(), K = Read() ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= N ; i ++) &#123;</span><br><span class="line">        <span class="built_in">string</span> A ; <span class="built_in">cin</span> &gt;&gt; A ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= M ; j ++)</span><br><span class="line">            Color[i][j] = A[j - <span class="number">1</span>] - <span class="string">'0'</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= N ; i ++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= M ; j ++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span> ; k &lt;= K ; k ++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (j == <span class="number">1</span>) Dp[i][j][k][<span class="number">0</span>] = max(Dp[i - <span class="number">1</span>][M][k - <span class="number">1</span>][<span class="number">0</span>], Dp[i - <span class="number">1</span>][M][k - <span class="number">1</span>][<span class="number">1</span>]),</span><br><span class="line">                    Dp[i][j][k][<span class="number">1</span>] = max(Dp[i - <span class="number">1</span>][M][k - <span class="number">1</span>][<span class="number">0</span>], Dp[i - <span class="number">1</span>][M][k - <span class="number">1</span>][<span class="number">1</span>]) + <span class="number">1</span> ;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">if</span> (Color[i][j] == Color[i][j - <span class="number">1</span>])</span><br><span class="line">            Dp[i][j][k][<span class="number">1</span>] = Dp[i][j - <span class="number">1</span>][k][<span class="number">1</span>] + <span class="number">1</span>,</span><br><span class="line">            Dp[i][j][k][<span class="number">0</span>] = Dp[i][j - <span class="number">1</span>][k][<span class="number">0</span>] ;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                Dp[i][j][k][<span class="number">1</span>] = max(Dp[i][j - <span class="number">1</span>][k - <span class="number">1</span>][<span class="number">1</span>] + <span class="number">1</span>, Dp[i][j - <span class="number">1</span>][k][<span class="number">0</span>] + <span class="number">1</span>) ;</span><br><span class="line">                Dp[i][j][k][<span class="number">0</span>] = max(Dp[i][j - <span class="number">1</span>][k][<span class="number">1</span>], Dp[i][j - <span class="number">1</span>][k - <span class="number">1</span>][<span class="number">0</span>]) ;</span><br><span class="line">            &#125;</span><br><span class="line">        Ans = max(Ans, max(Dp[i][j][k][<span class="number">0</span>], Dp[i][j][k][<span class="number">1</span>])) ;</span><br><span class="line">    &#125;   <span class="built_in">printf</span>(<span class="string">"%d"</span>, Ans) ; <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>没有写滚动数组，追求完美的当然可以滚动，但是不滚动数组也依然能过啦~。</p>
+        <p><a href="https://www.luogu.org/problemnew/show/P2048" target="_blank" rel="noopener">Link</a><br>我们先来考虑朴素算法：将所有的方案求出来，然后排序。但是这样当然是不可能过的。<br>对于某一个区间的综合我们肯定很自然地想到前缀和。<br>那首先定住一个左节点$X$，那么这个区间的右端点肯定处于$[X + L - 1, X + R - 1]$之间。<br>那么如果我们想要求这个区间里面的最大值，可以考虑使用询问时间复杂度为$O(1)$的$ST$表。<br>如果右端点为$Y$，那么区间的值就是$Sum[Y] - Sum[X]$，那么我们可以直接寻找右端点区间中的$Sum[i]$的最大值。<br>然后我们就得到了一堆区间的最大值，一共应该是$N - R + 1$，但是$K$是有可能大于这个数的，因此我们不能只求这个区间的最大值。<br>于是考虑将这个区间二分。<br>具体来说，就是首先将所有以$i$左端点，右端点在$[X + L - 1, X + R - 1]$的一个结构体存储到一个大根堆中，当然，本人使用的是单调队列，因为这样结构比较清晰。<br>然后循环$K$次，每次取出堆顶计入答案。<br>接下来的操作是以当前答案所处的右端点为中间，二分$[X + L - 1, X + R - 1]$这个区间，分别加入单调队列。因为如果想要寻找原来右端点区间中的第二大，第三大，我们选择去掉当前的最大值，然后将它的左边和右边分别入队，算法正确性就可以保证了。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">500010</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXM = <span class="number">500010</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Inf = <span class="number">0x7fffffff</span> ;</span><br><span class="line"></span><br><span class="line">LL N, K, L, R, Muc[MAXN] ;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span>  Sum[MAXN], Max[MAXN][<span class="number">20</span>] ;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> Ans ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> X = <span class="number">0</span>, F = <span class="number">1</span> ; <span class="keyword">char</span> ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span>) F = (ch == <span class="string">'-'</span> ? - <span class="number">1</span> : <span class="number">1</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>) X=(X&lt;&lt;<span class="number">1</span>)+(X&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">return</span> X * F ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">ST_BUILD</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= N ; i ++) Max[i][<span class="number">0</span>] = i ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span> ; (<span class="number">1</span> &lt;&lt; j) &lt;= N ; j ++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= N ; i ++) &#123;</span><br><span class="line">        <span class="keyword">int</span> X = Max[i][j - <span class="number">1</span>] ;</span><br><span class="line">        <span class="keyword">int</span> Y = Max[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>] ;</span><br><span class="line">        <span class="keyword">if</span> (Sum[X] &gt; Sum[Y]) Max[i][j] = X ;</span><br><span class="line">        <span class="keyword">else</span> Max[i][j] = Y ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Query</span><span class="params">(<span class="keyword">int</span> L, <span class="keyword">int</span> R)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T = log2(R - L + <span class="number">1</span>) ;</span><br><span class="line">    <span class="keyword">int</span> X = Max[L][T], Y = Max[R - (<span class="number">1</span> &lt;&lt; T) + <span class="number">1</span>][T] ;</span><br><span class="line">    <span class="keyword">return</span> Sum[X] &gt; Sum[Y] ? X : Y ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Q</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> X, L, R, P ;</span><br><span class="line">    Q() &#123;&#125; Q (<span class="keyword">int</span> X, <span class="keyword">int</span> L, <span class="keyword">int</span> R) : X(X), L(L), R(R), P(Query(L, R)) &#123;&#125;</span><br><span class="line">        <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Q &amp; A, <span class="keyword">const</span> Q &amp; B) &#123;</span><br><span class="line">            <span class="keyword">return</span> Sum[A.P] - Sum[A.X - <span class="number">1</span>] &lt; Sum[B.P] - Sum[B.X - <span class="number">1</span>] ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; ;</span><br><span class="line"></span><br><span class="line">priority_queue&lt;Q&gt; E ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    N = Read(), K = Read(), L = Read(), R = Read() ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= N ; i ++) &#123;</span><br><span class="line">        Muc[i] = Read() ;</span><br><span class="line">        Sum[i] = Sum[i - <span class="number">1</span>] + Muc[i] ;</span><br><span class="line">    &#125;   ST_BUILD() ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= N ; i ++)</span><br><span class="line">        <span class="keyword">if</span> (i + L - <span class="number">1</span> &lt;= N) </span><br><span class="line">            E.push(Q(i, i + L - <span class="number">1</span>, min(i + R - <span class="number">1</span>, N))) ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= K ; i ++) &#123;</span><br><span class="line">        <span class="keyword">int</span> X = E.top().X, l = E.top().L, r = E.top().R, P = E.top().P ;</span><br><span class="line">        E.pop() ; Ans += Sum[P] - Sum[X - <span class="number">1</span>] ;</span><br><span class="line">        <span class="keyword">if</span> (l != P) E.push(Q(X, l, P - <span class="number">1</span>)) ;</span><br><span class="line">        <span class="keyword">if</span> (r != P) E.push(Q(X, P + <span class="number">1</span>, r)) ;</span><br><span class="line"></span><br><span class="line">    &#125;   <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, Ans) ; <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -545,9 +551,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
+            <a href="/tags/贪心/" rel="tag"># 贪心</a>
           
-            <a href="/tags/背包/" rel="tag"># 背包</a>
+            <a href="/tags/前缀和/" rel="tag"># 前缀和</a>
+          
+            <a href="/tags/堆/" rel="tag"># 堆</a>
+          
+            <a href="/tags/ST表/" rel="tag"># ST表</a>
           
         </div>
       
@@ -560,8 +570,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/25/SDOI2009-虔诚的墓主人/" rel="next" title="[SDOI2009]虔诚的墓主人">
-                <i class="fa fa-chevron-left"></i> [SDOI2009]虔诚的墓主人
+              <a href="/2019/03/03/SCOI2009-粉刷匠/" rel="next" title="[SCOI2009]粉刷匠">
+                <i class="fa fa-chevron-left"></i> [SCOI2009]粉刷匠
               </a>
             
           </div>
@@ -569,10 +579,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/03/NOI2010-超级钢琴/" rel="prev" title="[NOI2010]超级钢琴">
-                [NOI2010]超级钢琴 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -624,17 +630,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -894,23 +891,6 @@
       </div>
 
       
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">1.</span> <span class="nav-text">后记</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
 
       
 
@@ -1099,7 +1079,7 @@
 <script>
   function renderGitment() {
     var gitment = new Gitment({
-      id: '1551574839000',
+      id: '1551595400000',
       owner: 'Yeasion',
       repo: 'gitment-comments',
       
