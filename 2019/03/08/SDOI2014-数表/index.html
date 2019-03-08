@@ -129,18 +129,18 @@
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-  <meta name="description" content="在$N \times M$的墓地中，每一个墓碑的虔诚度为上下左右恰好有$K$棵常青树组成的十字架的个数，要求计算墓地中所有墓碑的虔诚度之和。">
-<meta name="keywords" content="树状数组,数论,线段树,离散化,组合数学">
+  <meta name="description" content="给定$N$和$M$，$F(X)$表示$X$的约数和，求$$\sum_{i = 1}^N \sum_{j = 1}^M F(gcd(i, j)) ~mod ~ 2 ^{31}$$">
+<meta name="keywords" content="数论,莫比乌斯反演,前缀和">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[SDOI2009]虔诚的墓主人">
-<meta property="og:url" content="http://Yeasion.github.io/2019/02/25/SDOI2009-虔诚的墓主人/index.html">
+<meta property="og:title" content="[SDOI2014]数表">
+<meta property="og:url" content="http://Yeasion.github.io/2019/03/08/SDOI2014-数表/index.html">
 <meta property="og:site_name" content="苏·浅">
-<meta property="og:description" content="在$N \times M$的墓地中，每一个墓碑的虔诚度为上下左右恰好有$K$棵常青树组成的十字架的个数，要求计算墓地中所有墓碑的虔诚度之和。">
+<meta property="og:description" content="给定$N$和$M$，$F(X)$表示$X$的约数和，求$$\sum_{i = 1}^N \sum_{j = 1}^M F(gcd(i, j)) ~mod ~ 2 ^{31}$$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-03T06:39:46.889Z">
+<meta property="og:updated_time" content="2019-03-08T13:41:12.289Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[SDOI2009]虔诚的墓主人">
-<meta name="twitter:description" content="在$N \times M$的墓地中，每一个墓碑的虔诚度为上下左右恰好有$K$棵常青树组成的十字架的个数，要求计算墓地中所有墓碑的虔诚度之和。">
+<meta name="twitter:title" content="[SDOI2014]数表">
+<meta name="twitter:description" content="给定$N$和$M$，$F(X)$表示$X$的约数和，求$$\sum_{i = 1}^N \sum_{j = 1}^M F(gcd(i, j)) ~mod ~ 2 ^{31}$$">
 
 
 
@@ -149,7 +149,7 @@
 
 
 
-  <link rel="canonical" href="http://Yeasion.github.io/2019/02/25/SDOI2009-虔诚的墓主人/">
+  <link rel="canonical" href="http://Yeasion.github.io/2019/03/08/SDOI2014-数表/">
 
 
 
@@ -159,7 +159,7 @@
   };
 </script>
 
-  <title>[SDOI2009]虔诚的墓主人 | 苏·浅</title>
+  <title>[SDOI2014]数表 | 苏·浅</title>
   
 
 
@@ -393,7 +393,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/02/25/SDOI2009-虔诚的墓主人/">
+    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/03/08/SDOI2014-数表/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sue Shallow">
@@ -410,7 +410,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[SDOI2009]虔诚的墓主人
+          <h1 class="post-title" itemprop="name headline">[SDOI2014]数表
 
               
             
@@ -436,53 +436,16 @@
                 
               
 
-              <time title="创建时间：2019-02-25 16:57:23" itemprop="dateCreated datePublished" datetime="2019-02-25T16:57:23+08:00">2019-02-25</time>
+              <time title="创建时间：2019-03-08 20:19:35 / 修改时间：21:41:12" itemprop="dateCreated datePublished" datetime="2019-03-08T20:19:35+08:00">2019-03-08</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-03 14:39:46" itemprop="dateModified" datetime="2019-03-03T14:39:46+08:00">2019-03-03</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/题解/各省省选/" itemprop="url" rel="index"><span itemprop="name">各省省选</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -496,8 +459,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/02/25/SDOI2009-虔诚的墓主人/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/25/SDOI2009-虔诚的墓主人/" itemprop="commentCount"></span>
+                <a href="/2019/03/08/SDOI2014-数表/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/08/SDOI2014-数表/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -511,7 +474,7 @@
           
 
           
-            <div class="post-description">在$N \times M$的墓地中，每一个墓碑的虔诚度为上下左右恰好有$K$棵常青树组成的十字架的个数，要求计算墓地中所有墓碑的虔诚度之和。</div>
+            <div class="post-description">给定$N$和$M$，$F(X)$表示$X$的约数和，求$$\sum_{i = 1}^N \sum_{j = 1}^M F(gcd(i, j)) ~mod ~ 2 ^{31}$$</div>
           
 
         </div>
@@ -527,16 +490,7 @@
       
 
       
-        <p><a href="https://www.luogu.org/problemnew/show/P2154" target="_blank" rel="noopener">Link</a></p>
-<h3 id="讲解"><a href="#讲解" class="headerlink" title="讲解"></a>讲解</h3><p>转化一下题目的要求，假设我们知道点$(i,j)$的上下左右的常青树的个数分别为$U[i][j]$，$D[i][j]$，$L[i][j]$和$R[i][j]$，那么依据一个很简单的组合数学我们知道：<br>$$<br>Ans = C_{K}^{U[i][j]} \times C_{K}^{D[i][j]} \times C_{K}^{L[i][j]} \times C_{K}^{R[i][j]}<br>$$<br>其中$C$为组合。基本的思路就是这样，但是我们要考虑优化。<br>从空间上来说，$1 \leq N, M \leq 1000000000$，肯定会直接爆炸（并且空间限制还是$128MB$）。题目并不要求十分确切的常青树位置，因此可以直接离散化。于是我们可以将坐标离散到一个$W \times W$的图中，因为$1 \leq W \leq 10000$，因此空间的问题就直接解决了。<br>然后是时间，对于每一个墓地，原始做法是$O(N^2)$的求出上下左右的四个数组，但是最终的时间复杂度是$O(N^4)$。于是对于优化来说这里用到一个<strong>扫描线</strong>的思想。<br>对于扫描线的具体讲解可以直接$Google$，这里只是针对题目讲方法罢了。<br>将所有的常青树按照$X$为第一关键字，$Y$为第二关键字的方法升序排序。<br>对于同一行的两个常青树，如果中间没有任何常青树，那么发现中间的所有的墓地的$L[i][j]$和$R[i][j]$都相等，因此只需要前缀和预处理出来<br>$$<br>\sum_{i}^{N} \sum_{j}^M C_{K}^{L[i][j]} \times C_{K}^{R[i][j]}<br>$$<br>即可，下面要求的就只剩下了$U[i][j]$和$D[i][j]$。</p>
-<p>维护上下所有常青树的乘积，而左右乘积的改变次数就等于常青树的个数，而考虑其他行的时候上下乘积的改变次数也就是常青树的个数。</p>
-<p>于是我们要维护上下组合数的乘积的区间和，这种维护显然就可以线段树或者树状数组。</p>
-<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><p>对于同一行的两个数$A$和$B$，$Ans += C_{k}^{L[A]} \times C_{k}^{R[B]}$，然后用树状数组维护$A$和$B$点的$C_{k}^{U[i]} \times  C_{k}^{D[i]}$的和。（省略掉了列，因为是同一行嘛）</p>
-<p>答案实际上就是</p>
-<p>$$<br>\sum C_{k}^{L[A]} \times C_{k}^{R[B]} \times \sum [C_{k}^{U[i]} \times  C_{k}^{D[i]}]<br>$$</p>
-<p>从左向右处理的时候，修改树状数组该点横坐标位置上的数值为<br>$$<br>C_{k}^{U[i]} \times C_{k}^{D[i]} - C_{k}^{U[i] + 1} \times C_{k}^{D[i] +1}<br>$$</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">100010</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Inf = <span class="number">0x7ffffff</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Mod = <span class="number">2147483647</span> ;</span><br><span class="line"><span class="keyword">int</span> N, M, W, K, S[MAXN], C[MAXN][<span class="number">11</span>] ;</span><br><span class="line"><span class="keyword">int</span> X[MAXN], Y[MAXN], Ans ;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> X, Y, L, R, U, D ;</span><br><span class="line">&#125;   E[MAXN] ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> X = <span class="number">0</span>, F = <span class="number">1</span> ; <span class="keyword">char</span> ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span>) F = (ch == <span class="string">'-'</span> ? - <span class="number">1</span> : <span class="number">1</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>) X=(X&lt;&lt;<span class="number">1</span>)+(X&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">return</span> X * F ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">BIT</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> Sum[MAXN] ;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Lowbit</span><span class="params">(<span class="keyword">int</span> Now)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Now &amp; ( - Now) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> Now, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (Now &lt;= W) &#123;</span><br><span class="line">            Sum[Now] += K ;</span><br><span class="line">            Now += Lowbit(Now) ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Query</span><span class="params">(<span class="keyword">int</span> Now)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> Ans = <span class="number">0</span> ;</span><br><span class="line">        <span class="keyword">while</span> (Now &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            Ans += Sum[Now] ;</span><br><span class="line">            Now -= Lowbit(Now) ;</span><br><span class="line">        &#125;   <span class="keyword">return</span> Ans ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;   Bit ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">CMP</span><span class="params">(Node A, Node B)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (A.Y != B.Y) <span class="keyword">return</span> A.Y &lt; B.Y ;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> A.X &lt; B.X ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt;= W ; i ++) &#123;</span><br><span class="line">        C[i][<span class="number">0</span>] = <span class="number">1</span> ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= min(K, i); j ++)</span><br><span class="line">            C[i][j] = C[i - <span class="number">1</span>][j] + C[i - <span class="number">1</span>][j - <span class="number">1</span>] ;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(E + <span class="number">1</span>, E + W + <span class="number">1</span>, CMP) ;</span><br><span class="line">    <span class="keyword">int</span> Ken = <span class="number">0</span> ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= W ; i ++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (E[i].Y == E[i - <span class="number">1</span>].Y) Ken ++ ;</span><br><span class="line">        <span class="keyword">else</span> Ken = <span class="number">1</span> ;  E[i].L = Ken ;</span><br><span class="line">        S[E[i].X] ++ ; E[i].U = S[E[i].X] ;</span><br><span class="line">    &#125;   Ken = <span class="number">0</span> ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = W ; i &gt;= <span class="number">1</span> ; i --) &#123;</span><br><span class="line">        <span class="keyword">if</span> (E[i].Y == E[i + <span class="number">1</span>].Y) Ken ++ ;</span><br><span class="line">        <span class="keyword">else</span> Ken = <span class="number">1</span> ; E[i].R = Ken ;</span><br><span class="line">        E[i].D = S[E[i].X] - E[i].U ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    N = Read(), M = Read(), W = Read() ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= W ; i ++) &#123;</span><br><span class="line">        E[i].X = Read(), E[i].Y = Read() ;</span><br><span class="line">        X[i] = E[i].X ; Y[i] = E[i].Y ;</span><br><span class="line">    &#125;   K = Read() ;</span><br><span class="line">    sort(X + <span class="number">1</span>, X + W + <span class="number">1</span>) ;</span><br><span class="line">    sort(Y + <span class="number">1</span>, Y + W + <span class="number">1</span>) ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= W ; i ++) &#123;</span><br><span class="line">        E[i].X = lower_bound(X + <span class="number">1</span>, X + W + <span class="number">1</span>, E[i].X) - X ;</span><br><span class="line">        E[i].Y = lower_bound(Y + <span class="number">1</span>, Y + W + <span class="number">1</span>, E[i].Y) - Y ;</span><br><span class="line">    &#125;   Init() ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= W ; i ++) &#123;</span><br><span class="line">        <span class="keyword">int</span> V = Bit.Query(E[i].X) - Bit.Query(E[i].X - <span class="number">1</span>) ;</span><br><span class="line">        Bit.Add(E[i].X, - V) ;</span><br><span class="line">        Bit.Add(E[i].X, C[E[i].U][K] * C[E[i].D][K]) ;</span><br><span class="line">        <span class="keyword">if</span> (E[i].Y == E[i - <span class="number">1</span>].Y)</span><br><span class="line">            Ans = Ans + C[E[i - <span class="number">1</span>].L][K] * C[E[i].R][K] * </span><br><span class="line">            (Bit.Query(E[i].X - <span class="number">1</span>) - Bit.Query(E[i - <span class="number">1</span>].X));</span><br><span class="line">    &#125;   <span class="built_in">printf</span>(<span class="string">"%d"</span>, Ans &amp; Mod) ; </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>有人说可不可以搞一个二维线段树，思路上来说是可行的，但是空间上大概会爆炸吧~。<br>最后在冲浪的时候发现由于模数为$2147483647$所以可以自然溢出然后最后$ \&amp; 2147483646$就可以了。</p>
+        <p><a href="https://www.luogu.org/problemnew/solution/P3312" target="_blank" rel="noopener">Link</a><br>对于$$\sum_{i = 1}^N \sum_{j = 1}^M F(gcd(i, j))$$这个式子</p>
 
       
     </div>
@@ -560,15 +514,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/树状数组/" rel="tag"># 树状数组</a>
-          
             <a href="/tags/数论/" rel="tag"># 数论</a>
           
-            <a href="/tags/线段树/" rel="tag"># 线段树</a>
+            <a href="/tags/莫比乌斯反演/" rel="tag"># 莫比乌斯反演</a>
           
-            <a href="/tags/离散化/" rel="tag"># 离散化</a>
-          
-            <a href="/tags/组合数学/" rel="tag"># 组合数学</a>
+            <a href="/tags/前缀和/" rel="tag"># 前缀和</a>
           
         </div>
       
@@ -581,8 +531,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/23/POI2012-FES-Festival/" rel="next" title="[POI2012]FES-Festival">
-                <i class="fa fa-chevron-left"></i> [POI2012]FES-Festival
+              <a href="/2019/03/05/POI2011-MET-Meteors/" rel="next" title="[POI2011]MET-Meteors">
+                <i class="fa fa-chevron-left"></i> [POI2011]MET-Meteors
               </a>
             
           </div>
@@ -590,10 +540,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/03/SCOI2009-粉刷匠/" rel="prev" title="[SCOI2009]粉刷匠">
-                [SCOI2009]粉刷匠 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -645,17 +591,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <div class="site-overview-wrap sidebar-panel">
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -917,23 +854,6 @@
       </div>
 
       
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-            
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#讲解"><span class="nav-number">1.</span> <span class="nav-text">讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
-            
-
-          </div>
-        </div>
-      <!--/noindex-->
-      
 
       
 
@@ -1122,7 +1042,7 @@
 <script>
   function renderGitment() {
     var gitment = new Gitment({
-      id: '1551085043000',
+      id: '1552047575000',
       owner: 'Yeasion',
       repo: 'gitment-comments',
       

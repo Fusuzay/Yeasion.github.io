@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Yeasion.github.io/"/>
-  <updated>2019-03-05T09:37:31.309Z</updated>
+  <updated>2019-03-08T13:41:12.289Z</updated>
   <id>http://Yeasion.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[SDOI2014]数表</title>
+    <link href="http://Yeasion.github.io/2019/03/08/SDOI2014-%E6%95%B0%E8%A1%A8/"/>
+    <id>http://Yeasion.github.io/2019/03/08/SDOI2014-数表/</id>
+    <published>2019-03-08T12:19:35.000Z</published>
+    <updated>2019-03-08T13:41:12.289Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.luogu.org/problemnew/solution/P3312" target="_blank" rel="noopener">Link</a><br>对于$$\sum_{i = 1}^N \sum_{j = 1}^M F(gcd(i, j))$$这个式子</p>]]></content>
+    
+    <summary type="html">
+    
+      给定$N$和$M$，$F(X)$表示$X$的约数和，求$$\sum_{i = 1}^N \sum_{j = 1}^M F(gcd(i, j)) ~mod ~ 2 ^{31}$$
+    
+    </summary>
+    
+    
+      <category term="数论" scheme="http://Yeasion.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="莫比乌斯反演" scheme="http://Yeasion.github.io/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
+    
+      <category term="前缀和" scheme="http://Yeasion.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>[POI2011]MET-Meteors</title>
@@ -62,9 +86,9 @@
       <category term="NOI" scheme="http://Yeasion.github.io/categories/%E9%A2%98%E8%A7%A3/NOI/"/>
     
     
-      <category term="贪心" scheme="http://Yeasion.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="前缀和" scheme="http://Yeasion.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
+      <category term="贪心" scheme="http://Yeasion.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
       <category term="堆" scheme="http://Yeasion.github.io/tags/%E5%A0%86/"/>
     
@@ -118,9 +142,9 @@
       <category term="各省省选" scheme="http://Yeasion.github.io/categories/%E9%A2%98%E8%A7%A3/%E5%90%84%E7%9C%81%E7%9C%81%E9%80%89/"/>
     
     
-      <category term="数论" scheme="http://Yeasion.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
-    
       <category term="树状数组" scheme="http://Yeasion.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+    
+      <category term="数论" scheme="http://Yeasion.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
     
       <category term="线段树" scheme="http://Yeasion.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
     
@@ -180,11 +204,11 @@
       <category term="国家集训队" scheme="http://Yeasion.github.io/categories/%E9%A2%98%E8%A7%A3/%E5%9B%BD%E5%AE%B6%E9%9B%86%E8%AE%AD%E9%98%9F/"/>
     
     
-      <category term="最短路" scheme="http://Yeasion.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
-    
       <category term="动态规划" scheme="http://Yeasion.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
       <category term="图论" scheme="http://Yeasion.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="最短路" scheme="http://Yeasion.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
     
   </entry>
   
