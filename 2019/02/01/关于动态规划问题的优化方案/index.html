@@ -539,7 +539,7 @@
       
         <h1 id="浅谈关于动态规划问题的优化方案"><a href="#浅谈关于动态规划问题的优化方案" class="headerlink" title="浅谈关于动态规划问题的优化方案"></a>浅谈关于动态规划问题的优化方案</h1><h2 id="1-单调队列优化"><a href="#1-单调队列优化" class="headerlink" title="1.单调队列优化"></a>1.单调队列优化</h2><p> 单调队列是一种具有单调性的队列，其中的元素全部按照递增或者递减的顺序排列，就比如下面这个递减队列。<br><img src="http://wx2.sinaimg.cn/mw690/0060lm7Tly1ftxgb732mtj30dr054jr7.jpg" alt="picture"><br> 假如说我们要在队尾加入一个$5$，那么我们入队的步骤就是这样的：</p>
 <blockquote>
-<p> 发现队尾$1$，(q[tail])，$1&lt;5$，则将1退出(tail–)<br> 发现队尾$2$，(q[tail])，$2&lt;5$，则将2退出(tail–)<br> 发现队尾$3$，(q[tail])，$3&lt;5$，则将3退出(tail–)<br> 发现队尾$8$，(q[tail])，$8&gt;5$，停止退出队尾，将$5$入队。</p>
+<p> 发现队尾$1$，(q[tail])，$1<5$，则将1退出(tail--) 发现队尾$2$，(q[tail])，$2<5$，则将2退出(tail--)="" 发现队尾$3$，(q[tail])，$3<5$，则将3退出(tail--)="" 发现队尾$8$，(q[tail])，$8="">5$，停止退出队尾，将$5$入队。</5$，则将1退出(tail--)></p>
 </blockquote>
 <p><strong>经过上述步骤之后队列变为了{8,5}，依然满足递减的单调性，而实际上这也就是单调队列的基本操作。而维护递增的方式也是一样的。</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1000010</span> ;</span><br><span class="line"><span class="keyword">int</span> N, A[MAXN], Q[MAXN], Head = <span class="number">1</span>, Tail = <span class="number">1</span> ;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= N ; i ++) &#123;</span><br><span class="line">	N = Read() ;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= N ; j ++) A[j] = Read() ;</span><br><span class="line">	Q[<span class="number">1</span>] = A[<span class="number">1</span>] ; <span class="comment">//将第一个元素入队。</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span> ; j &lt;= N ; j ++) &#123;</span><br><span class="line">		<span class="keyword">while</span> (Head &lt;= Tail &amp;&amp; Q[Tail] &lt; A[j])</span><br><span class="line">		<span class="comment">//如果队列不为并且队尾元素小于A[i]</span></span><br><span class="line">			Tail -- ; <span class="comment">// 弹出队尾元素</span></span><br><span class="line">		Q[++ Tail] = A[j] ; <span class="comment">// 入队。</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -563,7 +563,7 @@
 <blockquote>
 <p> $f[i]=d[i]+min_{j=1}^{j&lt;=i}(a[i] \times b[j]+c[j])$</p>
 </blockquote>
-<p> （只是这样的结构而已，比如也可以是$max$，$j$也不一定属于$[1,n]$此处只是一个单独情况）<br> 其中$a[now],b[now],c[now],d[now]$都是关于$now$的函数，并且$b[now]$是单调递增的，那么我们接下来利用数学归纳法证明其决策的单调性。<br> 首先我们假设有两个决策$j$,$k$满足$j&lt;k$并且$k$的决策优于$j$的决策。那么我们有$d[i]+a[i]<em>b[j]+c[j]&gt;=d[i]+a[i]</em>b[k]+c[k]$;消去左右两端的d[i]后可得$a[i] \times b[j]+c[j]&gt;=a[i] \times b[k]+c[k]$。<br> 我们知道在$i$后面有状态$i+1$，我们为了简单起见，设$a[now]$是单调递减的，那么我们就是要证明</p>
+<p> （只是这样的结构而已，比如也可以是$max$，$j$也不一定属于$[1,n]$此处只是一个单独情况）<br> 其中$a[now],b[now],c[now],d[now]$都是关于$now$的函数，并且$b[now]$是单调递增的，那么我们接下来利用数学归纳法证明其决策的单调性。<br> 首先我们假设有两个决策$j$,$k$满足$j<k$并且$k$的决策优于$j$的决策。那么我们有$d[i]+a[i]*b[j]+c[j]>=d[i]+a[i]*b[k]+c[k]$;消去左右两端的d[i]后可得$a[i] \times b[j]+c[j]&gt;=a[i] \times b[k]+c[k]$。<br> 我们知道在$i$后面有状态$i+1$，我们为了简单起见，设$a[now]$是单调递减的，那么我们就是要证明</k$并且$k$的决策优于$j$的决策。那么我们有$d[i]+a[i]*b[j]+c[j]></p>
 <blockquote>
 <p> $d[i+1]+a[i+1] \times b[j]+c[j]&gt;=d[i+1]+a[i+1] \times b[k]+c[k]$</p>
 </blockquote>
@@ -747,7 +747,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -772,7 +772,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -841,7 +843,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">28</span>
+                      
+                    
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

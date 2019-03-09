@@ -526,8 +526,6 @@
 <h2 id="一：什么是插值"><a href="#一：什么是插值" class="headerlink" title="一：什么是插值"></a>一：什么是插值</h2><p>插值是属于数学数值分析领域的内容，常被称作<strong>内插</strong>或者<strong>插值</strong>。接下来给出定义：</p>
 <blockquote>
 <p>给定N个数据离散点$(x_k,y_k)$，其中$k = 1,2,3…N$。对于$x$求$x$对应的$y$值叫做内插。<br>L_n(x) = \sum_{k = 0}^ny_kl_k(x)<br>定义域在区间$[A,B]$上有意函数$F$，已知函数$G$在$[A,B]$范围内满足$G(x_i) = F(x_i) = 1,2…N$</p>
-</blockquote>
-<blockquote>
 <p>则称$G(x)$为$F(x)$关于节点${x_i}_{i = 0}^N$上的插值函数。</p>
 </blockquote>
 <p>假设我们已经求得$x_i$集合中的最大值$MAX$和最小值$MIN$</p>
@@ -549,7 +547,7 @@
 <p>其与数据点的距离平方成正比。</p>
 <p>我们发现前两者的不同在于第一个找到了一个采样点进行插值，而线性插值则找到了两个点，因为两点确定一个一次函数。相同的，我们也有三点确定的二次函数的抛物线插值法，这里不再进行分析。</p>
 <h3 id="3-多项式插值"><a href="#3-多项式插值" class="headerlink" title="3.多项式插值"></a>3.多项式插值</h3><blockquote>
-<p>已知函数$F(x)$在$[A, B]$上$N + 1$个点处的函数值${y_i}_{i = 0}^N$，求次数不超过$N$的多项式$G(x) = c_0 +c_1x+…+c_Nx^N$使得$G(x) = F(x)$称为多项式插值。</p>
+<p>已知函数$F(x)$在$[A, B]$上$N + 1$个点处的函数值$\{y_i\}_{i = 0}^N$，求次数不超过$N$的多项式$G(x) = c_0 +c_1x+…+c_Nx^N$使得$G(x) = F(x)$称为多项式插值。</p>
 </blockquote>
 <p><strong>定理</strong>：多项式插值函数存在且唯一：我们都知道过$N + 1$个点做一个$N$次函数最多只能做一个，而做一个$≥N$次的函数却可以有无数个。</p>
 <h2 id="三：拉格朗日插值法"><a href="#三：拉格朗日插值法" class="headerlink" title="三：拉格朗日插值法"></a>三：拉格朗日插值法</h2><p>建立插值多项式的方法（简称为插值法）最基本的是需要求解线性方程组，而这是最为冗杂，最为复杂的算法，一般没有特殊情况是不会用这种方法构造插值多项式的。因此经过前人的努力，引入了一种更为简单，实现更为便捷的插值法：拉格朗日插值法。与之相通的有牛顿插值法，而我们又知道多项式插值函数的唯一性，因此恒有$L_n(x) = N_n(x)$。（L：拉格朗日，N：牛顿）。</p>
@@ -558,7 +556,7 @@
 <p>那么我们只要寻找到合适的基函数和插值多项式在这组基下的线性表示系数，就可以通过基函数构造插值多项式，也就是<strong>基函数插值法</strong>。</p>
 <p>回到拉格朗日插值上来，我们首先寻找基函数。</p>
 <blockquote>
-<p>设$l_k(x)$是$n$次多项式，在节点$x_0，x_1…x_n$上满足$l_k(x_i) = 1 ~(i  = k)$或$l_k(x_i) = 0~(i ≠ k)$，则称$l_k(x)$为节点${x_i}_{i = 0}^N$上的$n$次拉格朗日插值基函数。</p>
+<p>设$l_k(x)$是$n$次多项式，在节点$x_0，x_1…x_n$上满足$l_k(x_i) = 1 ~(i  = k)$或$l_k(x_i) = 0~(i ≠ k)$，则称$l_k(x)$为节点$\{x_i\}_{i = 0}^N$上的$n$次拉格朗日插值基函数。</p>
 </blockquote>
 <p>构造法可以知道$l_k(x) = \prod_{i = 0,i ≠ k}^{N} \frac{x - x_i}{x_k - x_i}$</p>
 <p>知道基函数之后我们用基函数求$G(x) = a_0l_0(x) + … + a_nl_n(x)$，带入$G(x_i) = y_i$可得</p>
@@ -589,8 +587,6 @@
 <p>首先介绍一个叫做“差分表”的小知识点。这个名字我们很自然想到差分的思想，而我们平常用的差分（$a[i + 1] - a[i]$）只是叫做<strong>一阶差分</strong>，根据这个最基本的，我们定义出”<strong>差分表</strong>“的东西。</p>
 <blockquote>
 <p>对于函数$F(x)$，把$F’(X) = F(X + 1) - F(X)$叫做一阶差分，称$F’(X)$叫做差分算子。引申出对于$K &gt; 1$，有$F’^K(X) = F’^{K - 1}(X + 1) - F’^{K - 1}(X)$为$K$阶差分。</p>
-</blockquote>
-<blockquote>
 <p>算出所有的$F’^K(X)$，将$X = 1,2,3…H$，代入每一个$F’^K(X)$，得到一个二维的表。即是差分表。</p>
 </blockquote>
 <p><img src="https://pic.superbed.cn/item/5c5427615f3e509ed9a278be" alt="Pic20000"></p>
@@ -598,8 +594,6 @@
 <p>接着是引入的两个定理，可以直接使用：</p>
 <blockquote>
 <p>如果多项式的次数为$N$，则对于所有大于$N$的$K$，多项式的$K$阶差分都恒等于$0$。</p>
-</blockquote>
-<blockquote>
 <p>假设多项式$F(X)$的差分表的左斜列中各个元素依次是$D_0,D_1…D_M$，那么对于这个多项式的和恒有：</p>
 <p>$Sum(X) = \sum_{X = 0}^NF(X) = D_0C_{N + 1}^1 + D_1C_{N + 2}^1 + H + D_MC_{N + 1}^{M + 1}$</p>
 </blockquote>
@@ -767,7 +761,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -792,7 +786,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">6</span>
+                      
+                    
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -861,7 +857,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">28</span>
+                      
+                    
+                    <span class="site-state-item-count">29</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

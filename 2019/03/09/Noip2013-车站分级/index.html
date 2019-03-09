@@ -129,20 +129,19 @@
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-  <meta name="description" content="天低路细，以水为妻。秋色向南，此生过半。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://Yeasion.github.io/tags/index.html">
+  <meta name="description" content="给定$N$个车站，每个车站有每个车站的级别，规定一辆火车如果停靠在过了一个级别为$X$的车站，那么之后所有级别大于等于$X$的车站都要停靠。现在给出$M$个车次的停靠结果，问这$N$个火车站最少要分为多少个不同的级别才能使$M$个方案都合法。">
+<meta name="keywords" content="拓扑排序,图论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Noip2013]车站分级">
+<meta property="og:url" content="http://Yeasion.github.io/2019/03/09/Noip2013-车站分级/index.html">
 <meta property="og:site_name" content="苏·浅">
-<meta property="og:description" content="天低路细，以水为妻。秋色向南，此生过半。">
+<meta property="og:description" content="给定$N$个车站，每个车站有每个车站的级别，规定一辆火车如果停靠在过了一个级别为$X$的车站，那么之后所有级别大于等于$X$的车站都要停靠。现在给出$M$个车次的停靠结果，问这$N$个火车站最少要分为多少个不同的级别才能使$M$个方案都合法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-12T12:41:57.133Z">
+<meta property="og:updated_time" content="2019-03-09T13:09:22.344Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="天低路细，以水为妻。秋色向南，此生过半。">
+<meta name="twitter:title" content="[Noip2013]车站分级">
+<meta name="twitter:description" content="给定$N$个车站，每个车站有每个车站的级别，规定一辆火车如果停靠在过了一个级别为$X$的车站，那么之后所有级别大于等于$X$的车站都要停靠。现在给出$M$个车次的停靠结果，问这$N$个火车站最少要分为多少个不同的级别才能使$M$个方案都合法。">
 
-
-  
 
 
   <link rel="alternate" href="/atom.xml" title="苏·浅" type="application/atom+xml">
@@ -150,7 +149,7 @@
 
 
 
-  <link rel="canonical" href="http://Yeasion.github.io/tags/">
+  <link rel="canonical" href="http://Yeasion.github.io/2019/03/09/Noip2013-车站分级/">
 
 
 
@@ -160,7 +159,7 @@
   };
 </script>
 
-  <title>tags | 苏·浅</title>
+  <title>[Noip2013]车站分级 | 苏·浅</title>
   
 
 
@@ -298,7 +297,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -374,198 +373,211 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/03/09/Noip2013-车站分级/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sue Shallow">
+      <meta itemprop="description" content="天低路细，以水为妻。秋色向南，此生过半。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏·浅">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">tags
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body han-init-context">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
+          <h1 class="post-title" itemprop="name headline">[Noip2013]车站分级
+
               
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-              目前共计 29 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/Floyed/" style="font-size: 12px; color: #ccc">Floyed</a> <a href="/tags/ST表/" style="font-size: 12px; color: #ccc">ST表</a> <a href="/tags/Tarjan/" style="font-size: 12px; color: #ccc">Tarjan</a> <a href="/tags/中国剩余定理/" style="font-size: 12px; color: #ccc">中国剩余定理</a> <a href="/tags/傅里叶变换/" style="font-size: 12px; color: #ccc">傅里叶变换</a> <a href="/tags/前缀和/" style="font-size: 18px; color: #8e8e8e">前缀和</a> <a href="/tags/动态规划/" style="font-size: 24px; color: #4f4f4f">动态规划</a> <a href="/tags/单调队列优化/" style="font-size: 12px; color: #ccc">单调队列优化</a> <a href="/tags/图论/" style="font-size: 18px; color: #8e8e8e">图论</a> <a href="/tags/堆/" style="font-size: 12px; color: #ccc">堆</a> <a href="/tags/差分法/" style="font-size: 12px; color: #ccc">差分法</a> <a href="/tags/差分约束系统/" style="font-size: 12px; color: #ccc">差分约束系统</a> <a href="/tags/扩展中国剩余定理/" style="font-size: 12px; color: #ccc">扩展中国剩余定理</a> <a href="/tags/扩展欧几里得/" style="font-size: 12px; color: #ccc">扩展欧几里得</a> <a href="/tags/拉格朗日插值法/" style="font-size: 12px; color: #ccc">拉格朗日插值法</a> <a href="/tags/拓扑排序/" style="font-size: 12px; color: #ccc">拓扑排序</a> <a href="/tags/数论/" style="font-size: 30px; color: #111">数论</a> <a href="/tags/数论-莫比乌斯反演/" style="font-size: 12px; color: #ccc">数论 莫比乌斯反演</a> <a href="/tags/整体二分/" style="font-size: 12px; color: #ccc">整体二分</a> <a href="/tags/斜率优化/" style="font-size: 12px; color: #ccc">斜率优化</a> <a href="/tags/最短路/" style="font-size: 18px; color: #8e8e8e">最短路</a> <a href="/tags/树状数组/" style="font-size: 24px; color: #4f4f4f">树状数组</a> <a href="/tags/离散化/" style="font-size: 12px; color: #ccc">离散化</a> <a href="/tags/线性积分变换/" style="font-size: 12px; color: #ccc">线性积分变换</a> <a href="/tags/线段树/" style="font-size: 12px; color: #ccc">线段树</a> <a href="/tags/组合数学/" style="font-size: 12px; color: #ccc">组合数学</a> <a href="/tags/背包/" style="font-size: 12px; color: #ccc">背包</a> <a href="/tags/莫比乌斯反演/" style="font-size: 24px; color: #4f4f4f">莫比乌斯反演</a> <a href="/tags/贪心/" style="font-size: 12px; color: #ccc">贪心</a>
-            </div>
-          </div>
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-09 20:42:52 / 修改时间：21:09:22" itemprop="dateCreated datePublished" datetime="2019-03-09T20:42:52+08:00">2019-03-09</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/题解/Noip/" itemprop="url" rel="index"><span itemprop="name">Noip</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2019/03/09/Noip2013-车站分级/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/09/Noip2013-车站分级/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+            <div class="post-description">给定$N$个车站，每个车站有每个车站的级别，规定一辆火车如果停靠在过了一个级别为$X$的车站，那么之后所有级别大于等于$X$的车站都要停靠。现在给出$M$个车次的停靠结果，问这$N$个火车站最少要分为多少个不同的级别才能使$M$个方案都合法。</div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
       
       
+
+      
+        <p><a href="https://www.luogu.org/problemnew/show/P1983" target="_blank" rel="noopener">Link</a><br>很脑缺的一道题，我也不知道自己为什么要整这个。<br>首先我们把题目转化一下，也就是在$i$车站之后没有停靠的火车站，其级别肯定都是低于$i$的级别。<br>于是我们有了一堆车站的大小关系，选择从小级别的车站像大级别的车站连边，然后跑一下拓扑排序就行了。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1010</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXM = <span class="number">1010</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Inf = <span class="number">0x7fffffff</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M, Train[MAXN][MAXN], S[MAXN], H[MAXN], Tot, Ans ;</span><br><span class="line"><span class="keyword">bool</span> V[MAXN], Link[MAXN][MAXN] ; <span class="keyword">int</span> Ind[MAXN] ;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span> <span class="keyword">int</span> F ; <span class="keyword">int</span> T ; <span class="keyword">int</span> Next ;&#125; E[MAXN &lt;&lt; <span class="number">10</span>] ;</span><br><span class="line"><span class="comment">//数组大小一定要开够，不然会爆炸.....</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node2</span> &#123;</span> <span class="keyword">int</span> Num ; <span class="keyword">int</span> Level ;&#125; G ;</span><br><span class="line"><span class="built_in">queue</span>&lt;Node2&gt; Q ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> X = <span class="number">0</span>, F = <span class="number">1</span> ; <span class="keyword">char</span> ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span>) F = (ch == <span class="string">'-'</span> ? - <span class="number">1</span> : <span class="number">1</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>) X=(X&lt;&lt;<span class="number">1</span>)+(X&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">return</span> X * F ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Add</span> <span class="params">(<span class="keyword">int</span> F, <span class="keyword">int</span> T)</span> </span>&#123;</span><br><span class="line">    E[++ Tot].F = F ; E[Tot].T = T, E[Tot].Next = H[F], H[F] = Tot ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Topo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Ans = <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= N ; i ++)</span><br><span class="line">        <span class="keyword">if</span> (! Ind[i]) Q.push(&#123;i, <span class="number">1</span>&#125;) ;</span><br><span class="line">    <span class="keyword">while</span> (! Q.empty()) &#123;   </span><br><span class="line">        <span class="keyword">int</span> Now = Q.front().Num, L = Q.front().Level ;</span><br><span class="line">        Q.pop() ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = H[Now] ; i ; i = E[i].Next) &#123;</span><br><span class="line">            Ind[E[i].T] -- ;</span><br><span class="line">            <span class="keyword">if</span> (! Ind[E[i].T]) Q.push(&#123;E[i].T, L + <span class="number">1</span>&#125;), </span><br><span class="line">                               Ans = max(Ans, L + <span class="number">1</span>) ;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    N = Read(), M = Read() ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= M ; i ++) &#123;</span><br><span class="line">        S[i] = Read() ;</span><br><span class="line">        <span class="built_in">memset</span>(V, <span class="number">0</span>, <span class="keyword">sizeof</span>(V)) ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span> ; j &lt;= S[i] ; j ++)</span><br><span class="line">            Train[i][j] = Read(), V[Train[i][j]] = <span class="number">1</span> ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = Train[i][<span class="number">1</span>] ; j &lt;= Train[i][S[i]] ; j ++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (! V[j]) </span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span> ; k &lt;= S[i] ; k ++)</span><br><span class="line">                <span class="keyword">if</span> (! Link[j][Train[i][k]]) &#123;</span><br><span class="line">                    Ind[Train[i][k]] ++ ;</span><br><span class="line">                    Add(j, Train[i][k]) ;</span><br><span class="line">                    Link[j][Train[i][k]] = <span class="number">1</span> ;</span><br><span class="line">                &#125;   </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;   Topo() ; <span class="built_in">printf</span>(<span class="string">"%d"</span>, Ans) ; <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/拓扑排序/" rel="tag"># 拓扑排序</a>
+          
+            <a href="/tags/图论/" rel="tag"># 图论</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/08/SDOI2014-数表/" rel="next" title="[SDOI2014]数表">
+                <i class="fa fa-chevron-left"></i> [SDOI2014]数表
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -1057,7 +1069,7 @@
 <script>
   function renderGitment() {
     var gitment = new Gitment({
-      id: '1548950400000',
+      id: '1552135372000',
       owner: 'Yeasion',
       repo: 'gitment-comments',
       
