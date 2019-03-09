@@ -138,7 +138,7 @@
 <meta property="og:description" content="$$l_k(x) = \prod_{i = 0,i ≠ k}^{N} \frac{x - x_i}{x_k - x_i}$$ $$L_n(x) = \sum_{k = 0}^ny_kl_k(x)$$ 插值，适用于解决复杂、难于计算的函数表达式问题的有力手段，更有时根本没有具体的函数，只有对应采样点的几个函数值，而要求计算非采样点的函数值的问题，此时插值法就可以构造出该函数的近似表达式来解决问题。本">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://pic.superbed.cn/item/5c5427615f3e509ed9a278be">
-<meta property="og:updated_time" content="2019-02-26T09:51:57.029Z">
+<meta property="og:updated_time" content="2019-03-09T13:45:33.607Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="插值法及拉格朗日插值多项式">
 <meta name="twitter:description" content="$$l_k(x) = \prod_{i = 0,i ≠ k}^{N} \frac{x - x_i}{x_k - x_i}$$ $$L_n(x) = \sum_{k = 0}^ny_kl_k(x)$$ 插值，适用于解决复杂、难于计算的函数表达式问题的有力手段，更有时根本没有具体的函数，只有对应采样点的几个函数值，而要求计算非采样点的函数值的问题，此时插值法就可以构造出该函数的近似表达式来解决问题。本">
@@ -455,7 +455,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-26 17:51:57" itemprop="dateModified" datetime="2019-02-26T17:51:57+08:00">2019-02-26</time>
+                <time title="修改时间：2019-03-09 21:45:33" itemprop="dateModified" datetime="2019-03-09T21:45:33+08:00">2019-03-09</time>
               
             
           </span>
@@ -525,7 +525,9 @@
         <p>$Interpolation$：<br>“插值”，适用于解决复杂、难于计算的函数表达式问题的有力手段，更有时根本没有具体的函数，只有对应采样点的几个函数值，而要求计算非采样点的函数值的问题，此时插值法就可以构造出该函数的近似表达式来解决问题。</p>
 <h2 id="一：什么是插值"><a href="#一：什么是插值" class="headerlink" title="一：什么是插值"></a>一：什么是插值</h2><p>插值是属于数学数值分析领域的内容，常被称作<strong>内插</strong>或者<strong>插值</strong>。接下来给出定义：</p>
 <blockquote>
-<p>给定N个数据离散点$(x_k,y_k)$，其中$k = 1,2,3…N$。对于$x$求$x$对应的$y$值叫做内插。<br>L_n(x) = \sum_{k = 0}^ny_kl_k(x)<br>定义域在区间$[A,B]$上有意函数$F$，已知函数$G$在$[A,B]$范围内满足$G(x_i) = F(x_i) = 1,2…N$</p>
+<p>给定N个数据离散点$(x_k,y_k)$，其中$k = 1,2,3…N$。对于$x$求$x$对应的$y$值叫做内插。</p>
+<script type="math/tex; mode=display">
+L_n(x) = \sum_{k = 0}^ny_kl_k(x)</script><p>定义域在区间$[A,B]$上有意函数$F$，已知函数$G$在$[A,B]$范围内满足$G(x_i) = F(x_i) = 1,2…N$</p>
 <p>则称$G(x)$为$F(x)$关于节点${x_i}_{i = 0}^N$上的插值函数。</p>
 </blockquote>
 <p>假设我们已经求得$x_i$集合中的最大值$MAX$和最小值$MIN$</p>
