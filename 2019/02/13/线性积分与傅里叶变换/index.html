@@ -139,7 +139,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://pic.superbed.cn/item/5c63f23f5f3e509ed958a959">
 <meta property="og:image" content="https://pic.superbed.cn/item/5c6522ae5f3e509ed96baca2">
-<meta property="og:updated_time" content="2019-02-26T09:52:49.465Z">
+<meta property="og:updated_time" content="2019-03-10T00:29:06.592Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性积分与傅里叶变换">
 <meta name="twitter:description" content="$$k_k = F(\omega_n^k) = \sum_{i = 0}^{n - 1}a_i \omega _n^{k_i}$$ $$C(x) = \sum_{i = 0}^{N - 1}a_ix^i + \sum_{i = 0}^{N - 1}b_ix^i$$ 如何快速求两个多项式的卷积以及线性积分变换的基本内容。">
@@ -456,7 +456,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-02-26 17:52:49" itemprop="dateModified" datetime="2019-02-26T17:52:49+08:00">2019-02-26</time>
+                <time title="修改时间：2019-03-10 08:29:06" itemprop="dateModified" datetime="2019-03-10T08:29:06+08:00">2019-03-10</time>
               
             
           </span>
@@ -523,10 +523,10 @@
       
 
       
-        <p>文章被题目大致分为了两个部分：<strong>线性积分</strong>和<strong>傅里叶变换</strong>。其实这么分实际上是不甚妥当的，因为傅里叶变换就是<strong>线性积分变换</strong>中的一种。如果要结合题目细讲，写起来怕是一个浩大的工程了，因此讲解的内容大多就仅止步于在信息学奥赛中的应用。当然，博主也会尽力深挖，争取让文章不只是初步。</p>
+        <p>文章被题目大致分为了两个部分：<strong>线性积分</strong>和 <strong>傅里叶变换</strong>。其实这么分实际上是不甚妥当的，因为傅里叶变换就是<strong>线性积分变换</strong>中的一种。如果要结合题目细讲，写起来怕是一个浩大的工程了，因此讲解的内容大多就仅止步于在信息学奥赛中的应用。当然，博主也会尽力深挖，争取让文章不只是初步。</p>
 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>很多人学快速傅里叶变换，学它的微分关系，学它的卷积特性，但是始终都没有思考过这个玩意是干嘛用的。毕竟本篇文章实际上想要讲的就是傅里叶变换，我们也首先要了解到傅里叶变换的作用是什么。</p>
-<p>从数学上来说，傅里叶变换是用于解决两个多项式的<strong>卷积</strong>，简单来说就是两个多项式相乘的次数，如果直接暴力计算，那么时间复杂度应该是$O(N^2)$，而快速傅里叶变换可以将时间复杂度降为$O(NlogN)$。这在时间维度上就体现了它宝贵的价值，因为多项式相乘的普遍性，复杂的快速傅里叶变换也渐渐走进人们的视野。</p>
-<p>而从物理学或者工程学中，傅里叶变换的常见用途是<strong>信号处理</strong>，而所属的<strong>信息与系统</strong>又是大学中大部分工科的基础，足以见其重要性。具体的讲就是<strong>将给定信号把时间映射到振幅</strong>。而关于时间和频率的有关内容还请参考Heinrich关于傅里叶变换的教程：<a href="https://zhuanlan.zhihu.com/p/19763358" target="_blank" rel="noopener">傅里叶分析之掐死教程</a> ，例如其在讯号处理的经典应用就是将讯号分解为振幅分量和频率分量。</p>
+<p>从数学上来说，傅里叶变换是用于解决两个多项式的 <strong>卷积</strong>，简单来说就是两个多项式相乘的次数，如果直接暴力计算，那么时间复杂度应该是$O(N^2)$，而快速傅里叶变换可以将时间复杂度降为$O(NlogN)$。这在时间维度上就体现了它宝贵的价值，因为多项式相乘的普遍性，复杂的快速傅里叶变换也渐渐走进人们的视野。</p>
+<p>而从物理学或者工程学中，傅里叶变换的常见用途是 <strong>信号处理</strong>，而所属的<strong>信息与系统</strong>又是大学中大部分工科的基础，足以见其重要性。具体的讲就是 <strong>将给定信号把时间映射到振幅</strong>。而关于时间和频率的有关内容还请参考Heinrich关于傅里叶变换的教程：<a href="https://zhuanlan.zhihu.com/p/19763358" target="_blank" rel="noopener">傅里叶分析之掐死教程</a> ，例如其在讯号处理的经典应用就是将讯号分解为振幅分量和频率分量。</p>
 <h2 id="线性积分变换"><a href="#线性积分变换" class="headerlink" title="线性积分变换"></a>线性积分变换</h2><blockquote>
 <p><strong>积分变换</strong>是数学中作用于函数的<strong>算子</strong>，用以处理<strong>微分方程</strong>等问题。</p>
 </blockquote>
@@ -569,16 +569,21 @@
 <p>这个东西计算的时间复杂度依然是$O(N^2)$，那它到底有什么用处呢？这在算法上或许无法体现，但是它是傅里叶变换在时域和频域上都呈现离散的形式，具体依然可以参考Heinrich的讲解，使其在频谱分析和数据压缩等领域发挥了巨大优势。</p>
 <h3 id="快速傅里叶变换"><a href="#快速傅里叶变换" class="headerlink" title="快速傅里叶变换"></a>快速傅里叶变换</h3><p>也就是常说的<strong>FFT</strong>，可以说是对于DFT（离散傅里叶变换）在时间复杂度上的一大改进。</p>
 <p>设多项式$F(x)$的系数向量$a(a_0, a_1, a_2…a_{n - 1})$，对于多项式$F(x) = \sum_{i = 0} ^ {n - 1}a_ix_i$来说，可以按照下标的奇偶性分为两个部分：</p>
-<script type="math/tex; mode=display">F(x) = (a_0 + a_2x^2 +...+ a_{n - 2}x^{n - 2}) + (a_1 + a_3x^3...a_{n - 1}x^{n - 1})</script><p>我们设<script type="math/tex">F_1(x) = a_0 + a_2x + a_4x^+...+ a_{n - 2}x^{\frac n2 - 1}</script></p>
-<script type="math/tex; mode=display">F_1(x) = a_1 + a_3x + a_5x^+...+ a_{n - 1}x^{\frac n2 - 1}</script><p>则$F(x) = F_1(x^2) + xF_2(x^2)$<br>和离散傅里叶变换一样，我们把$\omega _n^k$代入得到<script type="math/tex">F(\omega _n^k) = F_1(\omega _n^{2k}) + \omega _n^kF_2(\omega _n^{2k})</script><br>然后同理，将$\omega _n^{k + \frac n2}$代入可以得到：$F(\omega _n^{k + \frac n2}) = F_1(\omega _n^{2k + n}) - F(\omega _n^kF_2(F(\omega _n^{2k} \times \omega_n^n)$<br>最后得到<script type="math/tex">F(F(\omega _n^{k + \frac n2}) = F_1(\omega _n^{2k}) - \omega _n^kF_2(\omega _n^{2k})</script>。<br>如此我们发现，两个式子化简后，只有一个常数项相反，其他都相同，于是再计算出第一个式子的时候我们可以$O(1)$求出第二个式子，并且发现两个式子将最初的范围缩小了一半，于是原问题缩小了一般，然后我们发现子问题也满足原问题性质，$k$与$k +\frac n2$同时取遍了(0, n - 1)，于是时间复杂度缩小到$O(NlogN)$。</p>
+<script type="math/tex; mode=display">F(x) = (a_0 + a_2x^2 +...+ a_{n - 2}x^{n - 2}) + (a_1 + a_3x^3...a_{n - 1}x^{n - 1})</script><p>我们设</p>
+<script type="math/tex; mode=display">F_1(x) = a_0 + a_2x + a_4x^+...+ a_{n - 2}x^{\frac n2 - 1}</script><script type="math/tex; mode=display">F_2(x) = a_1 + a_3x + a_5x^+...+ a_{n - 1}x^{\frac n2 - 1}</script><p>则</p>
+<script type="math/tex; mode=display">F(x) = F_1(x^2) + xF_2(x^2)</script><p>和离散傅里叶变换一样，我们把$\omega _n^k$代入得到</p>
+<script type="math/tex; mode=display">F(\omega _n^k) = F_1(\omega _n^{2k}) + \omega _n^kF_2(\omega _n^{2k})</script><p>然后同理，将$\omega _n^{k + \frac n2}$代入可以得到：</p>
+<script type="math/tex; mode=display">F(\omega _n^{k + \frac n2}) = F_1(\omega _n^{2k + n}) - F(\omega _n^kF_2(F(\omega _n^{2k} \times \omega_n^n)</script><p>最后得到</p>
+<script type="math/tex; mode=display">F(F(\omega _n^{k + \frac n2}) = F_1(\omega _n^{2k}) - \omega _n^kF_2(\omega _n^{2k})</script><p>如此我们发现，两个式子化简后，只有一个常数项相反，其他都相同，于是再计算出第一个式子的时候我们可以$O(1)$求出第二个式子，并且发现两个式子将最初的范围缩小了一半，于是原问题缩小了一般，然后我们发现子问题也满足原问题性质，$k$与$k +\frac n2$同时取遍了(0, n - 1)，于是时间复杂度缩小到$O(NlogN)$。</p>
 <p>这个算法在FFT的计算中最为常见，是在1965年由<strong>J.W.Cooley</strong>和<strong>J.W.Tuky</strong>提出的，因此也被称为<strong>Cooley-Tukey算法</strong>，实际上是基于分治的思想实现的，</p>
-<h3 id="快速傅里叶逆变换"><a href="#快速傅里叶逆变换" class="headerlink" title="快速傅里叶逆变换"></a>快速傅里叶逆变换</h3><p>也称为傅里叶反变换，上文我们在线性积分变换中提到过反积分变换，而<strong>傅里叶反变换</strong>就是傅里叶变换的<strong>反积分变换</strong>，在数学中的意义是点值表示的多项式转化为系数表示，也就是说我们要从点值向量$(a_0, a_1, a_2…a_{n - 1})$得到系数向量$(y_0, y_1, y_2…y_{n - 1})$。则我们可以设$(y_0, y_1, y_2…y_{n - 1})$是$(a_0, a_1, a_2…a_{n - 1})$进行傅里叶逆变换后的结果，并<br>设有多项式$F(x) = \sum_{i = 0} ^{n - 1}y_0x^i$，<br>假设有向量$(c_0, c_1, c_2…c_{n - 1})$表示多项式在$\omega_n^0, \omega_n^{-1}…\omega_n^{1 - n}$上的点值表示，则向量c满足<script type="math/tex">c_k = \sum_{i = 0} ^{n - 1}y_i(\omega_n^{-k})^i</script>，然后我们考虑将式子展开。</p>
-<script type="math/tex; mode=display">c_k = \sum_{i = 0} ^ {n - 1}y_i(\omega _n^{-k}) ^ i</script><script type="math/tex; mode=display">= \sum_{i = 0} ^ {n - 1}(\sum_{j = 0} ^ {n - 1}a_j(\omega _n^{j} k) ^ j)(\omega_n^{-k})^i</script><script type="math/tex; mode=display">= \sum_{i = 0}^{n - 1}(\sum_{j = 0} ^{n - 1}a_j(\omega_n^j)^i)(\omega_n^{-k})^i ~=~ \sum_{i = 0}^{n - 1}(\sum_{j = 0} ^{n - 1}a_j(\omega_n^j)^i(\omega_n^{-k})^i)</script><script type="math/tex; mode=display">= \sum_{i = 0}^{n - 1}\sum_{j = 0}^{n - 1}a_j(\omega_n^{j - k})^i ~=~ \sum_{j = 0}^{n - 1}a_j(\sum_{i = 0}^{n - 1}(\omega_n^{j - k})^i)</script><p>设一个式子<script type="math/tex">S(\omega_n^k)  = \sum_{i = 0} ^{n - 1}(\omega_n^k)^i</script></p>
-<p>在两边同时乘一个$\omega_n^k$得：<script type="math/tex">\omega_n^kS(\omega_n^k)  = \sum_{i = 0} ^{n - 1}(\omega_n^k)^{(i+1)}</script></p>
-<p>将前后两个式子相减，得到$\omega _n^kS(\omega_n^k) - S(\omega _n^k) = (\omega_n^k)^n - 1$</p>
-<script type="math/tex; mode=display">S(\omega _n^k) = \frac {(\omega_n^k)^n - 1}{\omega_n^k - 1}= 0 $$则当$k = 0$的时候，其值为0
-
-而原来的式子$$c_k = \sum_{j = 0}^{n - 1}a_j(\sum_{i = 0} ^ {j - k})^i = \sum_{j = 0} ^ {n-1}a_jS(\omega_n^{j - k})</script><p>当$j = k$的时候$S = n$，否则$S = 0$，所以<script type="math/tex">a_i = \frac 1n c_i</script></p>
+<h3 id="快速傅里叶逆变换"><a href="#快速傅里叶逆变换" class="headerlink" title="快速傅里叶逆变换"></a>快速傅里叶逆变换</h3><p>也称为傅里叶反变换，上文我们在线性积分变换中提到过反积分变换，而<strong>傅里叶反变换</strong>就是傅里叶变换的<strong>反积分变换</strong>，在数学中的意义是点值表示的多项式转化为系数表示，也就是说我们要从点值向量$(a_0, a_1, a_2…a_{n - 1})$得到系数向量$(y_0, y_1, y_2…y_{n - 1})$。则我们可以设$(y_0, y_1, y_2…y_{n - 1})$是$(a_0, a_1, a_2…a_{n - 1})$进行傅里叶逆变换后的结果，并<br>设有多项式$F(x) = \sum_{i = 0} ^{n - 1}y_0x^i$，<br>假设有向量$(c_0, c_1, c_2…c_{n - 1})$表示多项式在$\omega_n^0, \omega_n^{-1}…\omega_n^{1 - n}$上的点值表示，则向量c满足</p>
+<script type="math/tex; mode=display">c_k = \sum_{i = 0} ^{n - 1}y_i(\omega_n^{-k})^i</script><p>然后我们考虑将式子展开。</p>
+<script type="math/tex; mode=display">c_k = \sum_{i = 0} ^ {n - 1}y_i(\omega _n^{-k}) ^ i</script><script type="math/tex; mode=display">= \sum_{i = 0} ^ {n - 1}(\sum_{j = 0} ^ {n - 1}a_j(\omega _n^{j} k) ^ j)(\omega_n^{-k})^i</script><script type="math/tex; mode=display">= \sum_{i = 0}^{n - 1}(\sum_{j = 0} ^{n - 1}a_j(\omega_n^j)^i)(\omega_n^{-k})^i ~=~ \sum_{i = 0}^{n - 1}(\sum_{j = 0} ^{n - 1}a_j(\omega_n^j)^i(\omega_n^{-k})^i)</script><script type="math/tex; mode=display">= \sum_{i = 0}^{n - 1}\sum_{j = 0}^{n - 1}a_j(\omega_n^{j - k})^i ~=~ \sum_{j = 0}^{n - 1}a_j(\sum_{i = 0}^{n - 1}(\omega_n^{j - k})^i)</script><p>设一个式子</p>
+<script type="math/tex; mode=display">S(\omega_n^k)  = \sum_{i = 0} ^{n - 1}(\omega_n^k)^i</script><p>在两边同时乘一个$\omega_n^k$得：</p>
+<script type="math/tex; mode=display">\omega_n^kS(\omega_n^k)  = \sum_{i = 0} ^{n - 1}(\omega_n^k)^{(i+1)}</script><p>将前后两个式子相减，得到</p>
+<script type="math/tex; mode=display">\omega _n^kS(\omega_n^k) - S(\omega _n^k) = (\omega_n^k)^n - 1</script><script type="math/tex; mode=display">S(\omega _n^k) = \frac {(\omega_n^k)^n - 1}{\omega_n^k - 1}= 0</script><p>则当$k = 0$的时候，其值为0</p>
+<p>而原来的式子</p>
+<script type="math/tex; mode=display">c_k = \sum_{j = 0}^{n - 1}a_j(\sum_{i = 0} ^ {j - k})^i = \sum_{j = 0} ^ {n-1}a_jS(\omega_n^{j - k})</script><p>当$j = k$的时候$S = n$，否则$S = 0$，所以<script type="math/tex">a_i = \frac 1n c_i</script></p>
 <p>这样我们得到了点值和系数的关系式，所以，从结论来说，将单位根幂上-1，然后做一次快速傅里叶变换，将结果的数除以n就是傅里叶逆变换的结果。</p>
 <h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><p>一般的分治都会采用递归操作实现，但是在FFT中递归实现的效率比较低，所以大多数情况下采用迭代操作实现。我们观察二进制下的序列规律<br><img src="https://pic.superbed.cn/item/5c6522ae5f3e509ed96baca2" alt="pic"><br>发现分治到边界条件的时候每个数的下标等于原下标的二进制翻转，于是我们省去了分奇偶的操作，直接枚举每一个二进制位，然后向上合并就可以了。下面是迭代操作实现的代码。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> l = <span class="number">0</span> ; <span class="keyword">while</span> ((<span class="number">1</span> &lt;&lt; l) &lt; N) l ++ ;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; N ; i ++) &#123;</span><br><span class="line">	 <span class="keyword">int</span> T = <span class="number">0</span> ;</span><br><span class="line">	 <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; l ; j ++)</span><br><span class="line">	 	<span class="keyword">if</span> (i &amp; (<span class="number">1</span> &lt;&lt; j)) T /= (<span class="number">1</span> &lt;&lt; (k - j - <span class="number">1</span>)) ;</span><br><span class="line">	 <span class="keyword">if</span> (i &lt; t) swap(a[i], a[T]) ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
