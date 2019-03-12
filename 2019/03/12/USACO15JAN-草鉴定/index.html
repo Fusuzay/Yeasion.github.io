@@ -129,19 +129,21 @@
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-  <meta name="description" content="给定一个环，每个节点有一个所属国家，$K$次事件，每次对$[L,R]$区间上的每个点点权加上一个值$A$，求每个国家最早多少次操作之后所有点的点权和能达到一个特定值。">
-<meta name="keywords" content="树状数组,整体二分">
+  <meta name="description" content="有一个有向图，Bessie可以从$1$号节点开始然后最后回到$1$号节点，其中可以逆行一次，求能够经过的最多的节点数。">
+<meta name="keywords" content="拓扑排序,最短路,Tarjan">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[POI2011]MET-Meteors">
-<meta property="og:url" content="http://Yeasion.github.io/2019/03/05/POI2011-MET-Meteors/index.html">
+<meta property="og:title" content="[USACO15JAN]草鉴定">
+<meta property="og:url" content="http://Yeasion.github.io/2019/03/12/USACO15JAN-草鉴定/index.html">
 <meta property="og:site_name" content="苏·浅">
-<meta property="og:description" content="给定一个环，每个节点有一个所属国家，$K$次事件，每次对$[L,R]$区间上的每个点点权加上一个值$A$，求每个国家最早多少次操作之后所有点的点权和能达到一个特定值。">
+<meta property="og:description" content="有一个有向图，Bessie可以从$1$号节点开始然后最后回到$1$号节点，其中可以逆行一次，求能够经过的最多的节点数。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-05T09:37:31.309Z">
+<meta property="og:updated_time" content="2019-03-12T09:35:46.464Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[POI2011]MET-Meteors">
-<meta name="twitter:description" content="给定一个环，每个节点有一个所属国家，$K$次事件，每次对$[L,R]$区间上的每个点点权加上一个值$A$，求每个国家最早多少次操作之后所有点的点权和能达到一个特定值。">
+<meta name="twitter:title" content="[USACO15JAN]草鉴定">
+<meta name="twitter:description" content="有一个有向图，Bessie可以从$1$号节点开始然后最后回到$1$号节点，其中可以逆行一次，求能够经过的最多的节点数。">
 
+
+  
 
 
   <link rel="alternate" href="/atom.xml" title="苏·浅" type="application/atom+xml">
@@ -149,7 +151,7 @@
 
 
 
-  <link rel="canonical" href="http://Yeasion.github.io/2019/03/05/POI2011-MET-Meteors/">
+  <link rel="canonical" href="http://Yeasion.github.io/2019/03/12/USACO15JAN-草鉴定/">
 
 
 
@@ -159,7 +161,7 @@
   };
 </script>
 
-  <title>[POI2011]MET-Meteors | 苏·浅</title>
+  <title>[USACO15JAN]草鉴定 | 苏·浅</title>
   
 
 
@@ -393,7 +395,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/03/05/POI2011-MET-Meteors/">
+    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/03/12/USACO15JAN-草鉴定/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Sue Shallow">
@@ -410,7 +412,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[POI2011]MET-Meteors
+          <h1 class="post-title" itemprop="name headline">[USACO15JAN]草鉴定
 
               
             
@@ -436,7 +438,7 @@
                 
               
 
-              <time title="创建时间：2019-03-05 17:27:05 / 修改时间：17:37:31" itemprop="dateCreated datePublished" datetime="2019-03-05T17:27:05+08:00">2019-03-05</time>
+              <time title="创建时间：2019-03-12 17:15:29 / 修改时间：17:35:46" itemprop="dateCreated datePublished" datetime="2019-03-12T17:15:29+08:00">2019-03-12</time>
             
 
             
@@ -446,31 +448,6 @@
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/题解/POI/" itemprop="url" rel="index"><span itemprop="name">POI</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -484,8 +461,8 @@
                 </span>
             
                 <span class="post-meta-item-text">评论数：</span>
-                <a href="/2019/03/05/POI2011-MET-Meteors/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/05/POI2011-MET-Meteors/" itemprop="commentCount"></span>
+                <a href="/2019/03/12/USACO15JAN-草鉴定/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/12/USACO15JAN-草鉴定/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -499,7 +476,7 @@
           
 
           
-            <div class="post-description">给定一个环，每个节点有一个所属国家，$K$次事件，每次对$[L,R]$区间上的每个点点权加上一个值$A$，求每个国家最早多少次操作之后所有点的点权和能达到一个特定值。</div>
+            <div class="post-description">有一个有向图，Bessie可以从$1$号节点开始然后最后回到$1$号节点，其中可以逆行一次，求能够经过的最多的节点数。</div>
           
 
         </div>
@@ -515,20 +492,8 @@
       
 
       
-        <p><a href="https://www.luogu.org/problemnew/show/P3527" target="_blank" rel="noopener">Link</a><br>考虑朴素算法，循环$K$次，每次循环$1$到$N$增加相应的$[L,R,A]$，然后$O(N)$判断某一个数是不是已经合法。这样的算法的时间复杂度是$O(N^3)$，那么我们考虑逐步优化。</p>
-<ol>
-<li>首先区间加我们肯定可以使用线段树或者树状数组，这里使用的是后者。</li>
-<li>改换一下枚举顺序就可以变成先枚举每一个数，然后枚举$K$次，然后我们发现枚举$K$次的这个步骤是单调的，因为对于某一个数，如果在$X$次区间加之后没有合法，那么在之前肯定也是不合法的，如果在$X$次区间加之后是合法的，那么在这之后肯定也是合法的，所以这个枚举$K$的步骤是单调的，于是可以考虑二分答案。<br>那么总步骤就得出来了：<blockquote>
-<ol>
-<li>枚举每一个位置</li>
-<li>二分区间加的次数</li>
-<li>树状数组区间加</li>
-</ol>
-</blockquote>
-</li>
-</ol>
-<p>总时间复杂度$O(Nlog^2N)$<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-
+        <p><a href="https://www.luogu.org/problemnew/show/P3119" target="_blank" rel="noopener">Link</a><br>一道及其智障的题目，关键在于博主调这个智障题调了基本一天…<br>其实不是很难想，我们先缩一下点，把新图建出来，当然是因为要保证图无环，要不然下面就没法做了。<br>这里实际上要建两个新图，一个正着的，还有一个反图。<br>干什么用的呢？主要就是因为题目要求回到原点，这个玩意怎么实现的问题。<br>首先这个路经肯定是一个圈，然后我们就可以找一下这个圈的一个“转折节点”，实际上就是枚举一个中间节点$X$，然后吧路经分为$1 -&gt; X$和$X -&gt; 1$两个链，这就需要我们建一个反图来进行实现。<br>因为题目要求经过的点最多，因此我们就跑两个最长路。<br>第一个最长路记录正图的$1 - &gt; Point_i$节点为$D[i]$。<br>第二个最长路记录反图的$Point_i - &gt; 1$节点为$D2[i]$。（实际上也是从1节点出发）<br>然后对于这个逆行的边我们如下处理：<br>首先在$Tarjan$的时候进行一个记录$C[i]$表示$SCCi$号节点里面包含的原图的点数。<br>那么$C[B[i]]$就是表示原图$i$号节点所属的$SCC$节点包含的原图的点数。<br>对于逆行的边我们直接枚举<br>答案就是$min(Ans, D[V[j].F] + D2[V[j].T] + C[B[1]])$（V为反图）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1010000</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXM = <span class="number">200010</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Inf = <span class="number">0x7fffffff</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M, B[MAXN], Low[MAXN], Dfn[MAXN &lt;&lt; <span class="number">1</span>] ;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">EDGE</span> &#123;</span> <span class="keyword">int</span> F, T, Next ;&#125; E[MAXM &lt;&lt; <span class="number">1</span>] ;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">GDGE</span> &#123;</span> <span class="keyword">int</span> F, T, Next ;&#125; G[MAXM &lt;&lt; <span class="number">1</span>] ;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">VDGE</span> &#123;</span> <span class="keyword">int</span> F, T, Next ;&#125; V[MAXM &lt;&lt; <span class="number">1</span>] ;</span><br><span class="line"><span class="keyword">int</span> Ken, Top, S[MAXN], Cnt, C[MAXN],Ans ;</span><br><span class="line"><span class="keyword">bool</span> Insta[MAXN] ;</span><br><span class="line"><span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; Point[MAXN] ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">Read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> X = <span class="number">0</span>, F = <span class="number">1</span> ; <span class="keyword">char</span> ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span>) F = (ch == <span class="string">'-'</span> ? - <span class="number">1</span> : <span class="number">1</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>) X=(X&lt;&lt;<span class="number">1</span>)+(X&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">return</span> X * F ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> H[MAXN], Tot ;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> F, <span class="keyword">int</span> T)</span> </span>&#123;</span><br><span class="line">    E[++ Tot].F = F ; E[Tot].T = T ;</span><br><span class="line">    E[Tot].Next = H[F], H[F] = Tot ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> H2[MAXN], Tot2 ;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Add2</span><span class="params">(<span class="keyword">int</span> F, <span class="keyword">int</span> T)</span> </span>&#123;</span><br><span class="line">    G[++ Tot2].F = F ; G[Tot2].T = T ;</span><br><span class="line">    G[Tot2].Next = H2[F], H2[F] = Tot2 ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> H3[MAXN], Tot3 ;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Add3</span><span class="params">(<span class="keyword">int</span> F, <span class="keyword">int</span> T)</span> </span>&#123;</span><br><span class="line">    V[++ Tot3].F = F ; V[Tot3].T = T ;</span><br><span class="line">    V[Tot3].Next = H3[F], H3[F] = Tot3 ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Tarjan</span><span class="params">(<span class="keyword">int</span> Now)</span> </span>&#123;</span><br><span class="line">    Dfn[Now] = ++ Ken ; Low[Now] = Ken ;</span><br><span class="line">    S[++ Top] = Now ; Insta[Now] = <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = H[Now] ;  i ; i = E[i].Next)</span><br><span class="line">        <span class="keyword">if</span> (! Dfn[E[i].T]) &#123;</span><br><span class="line">            Tarjan(E[i].T) ;</span><br><span class="line">            Low[Now] = min(Low[Now], Low[E[i].T]) ;</span><br><span class="line">        &#125;   <span class="keyword">else</span> <span class="keyword">if</span> (Insta[E[i].T])</span><br><span class="line">            Low[Now] = min(Low[Now], Dfn[E[i].T]) ;</span><br><span class="line">    <span class="keyword">if</span> (Dfn[Now] == Low[Now]) &#123;</span><br><span class="line">        <span class="keyword">int</span> Pass ; Cnt ++ ;</span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            Pass = S[Top --] ;</span><br><span class="line">            B[Pass] = Cnt ;</span><br><span class="line">            Point[Cnt].push_back(Pass) ;</span><br><span class="line">            C[Cnt] ++ ;</span><br><span class="line">            Insta[Pass] = <span class="literal">false</span> ;</span><br><span class="line">        &#125;   <span class="keyword">while</span> (Pass != Now) ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> D[MAXN], Vis[MAXN] ;</span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; Q ;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Spfa</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(Vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(Vis)) ;</span><br><span class="line">    <span class="built_in">memset</span>(D, <span class="number">0</span>, <span class="keyword">sizeof</span>(D)) ;</span><br><span class="line">    D[B[<span class="number">1</span>]] = - C[B[<span class="number">1</span>]] ; Vis[B[<span class="number">1</span>]] = <span class="number">1</span> ; Q.push(B[<span class="number">1</span>]) ;</span><br><span class="line">    <span class="keyword">while</span> (! Q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> Now = Q.front() ; Q.pop() ; Vis[Now] = <span class="literal">false</span> ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = H2[Now] ; i ; i = G[i].Next)</span><br><span class="line">            <span class="keyword">if</span> (D[G[i].T] &gt; D[Now] - C[G[i].T]) &#123;</span><br><span class="line">                D[G[i].T] = D[Now] - C[G[i].T] ;</span><br><span class="line">                <span class="keyword">if</span> (! Vis[G[i].T])</span><br><span class="line">                    Vis[G[i].T] = <span class="number">1</span>, Q.push(G[i].T) ;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> D2[MAXN] ;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Spfa2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(D2, <span class="number">0</span>, <span class="keyword">sizeof</span>(D2)) ;</span><br><span class="line">    <span class="built_in">memset</span>(Vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(Vis)) ;</span><br><span class="line">    <span class="keyword">while</span> (! Q.empty()) Q.pop() ;</span><br><span class="line">    D2[B[<span class="number">1</span>]] = - C[B[<span class="number">1</span>]] ; Vis[B[<span class="number">1</span>]] = <span class="number">1</span> ; Q.push(B[<span class="number">1</span>]) ;</span><br><span class="line">    <span class="keyword">while</span> (! Q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> Now = Q.front() ; Q.pop() ; Vis[Now] = <span class="literal">false</span> ;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = H3[Now] ; i ; i = V[i].Next)</span><br><span class="line">            <span class="keyword">if</span> (D2[V[i].T] &gt; D2[Now] - C[V[i].T]) &#123;</span><br><span class="line">                D2[V[i].T] = D2[Now] - C[V[i].T] ;</span><br><span class="line">                <span class="keyword">if</span> (! Vis[V[i].T])</span><br><span class="line">                    Vis[V[i].T] = <span class="number">1</span>, Q.push(V[i].T) ;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    N = Read() ; M = Read() ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= M ; i ++) &#123;</span><br><span class="line">        <span class="keyword">int</span> A = Read(), B = Read() ;</span><br><span class="line">        Add(A, B) ;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= N ; i ++)</span><br><span class="line">        <span class="keyword">if</span> (! Dfn[i]) Tarjan(i) ;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= Cnt ; i ++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span> ; j &lt; Point[i].size() ; j ++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> k = H[Point[i][j]] ; k ; k = E[k].Next)</span><br><span class="line">            <span class="keyword">if</span> (B[Point[i][j]] != B[E[k].T]) &#123;</span><br><span class="line">                Add2(B[Point[i][j]], B[E[k].T]) ;</span><br><span class="line">                Add3(B[E[k].T], B[Point[i][j]]) ;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">    Spfa() ; Spfa2() ;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt;= Cnt ; i ++)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = H3[i] ; j ; j = V[j].Next) &#123;</span><br><span class="line">        <span class="keyword">if</span> (D[V[j].F] &lt; <span class="number">0</span> &amp;&amp; D2[V[j].T] &lt; <span class="number">0</span>)</span><br><span class="line">            Ans = min(Ans, D[V[j].F] + D2[V[j].T] + C[B[<span class="number">1</span>]]) ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, - Ans) ;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -551,9 +516,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/树状数组/" rel="tag"># 树状数组</a>
+            <a href="/tags/拓扑排序/" rel="tag"># 拓扑排序</a>
           
-            <a href="/tags/整体二分/" rel="tag"># 整体二分</a>
+            <a href="/tags/最短路/" rel="tag"># 最短路</a>
+          
+            <a href="/tags/Tarjan/" rel="tag"># Tarjan</a>
           
         </div>
       
@@ -566,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/03/NOI2010-超级钢琴/" rel="next" title="[NOI2010]超级钢琴">
-                <i class="fa fa-chevron-left"></i> [NOI2010]超级钢琴
+              <a href="/2019/03/10/SDOI2009-Elaxia的路线/" rel="next" title="[SDOI2009]Elaxia的路线">
+                <i class="fa fa-chevron-left"></i> [SDOI2009]Elaxia的路线
               </a>
             
           </div>
@@ -575,10 +542,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/08/SDOI2014-数表/" rel="prev" title="[SDOI2014]数表">
-                [SDOI2014]数表 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -1085,7 +1048,7 @@
 <script>
   function renderGitment() {
     var gitment = new Gitment({
-      id: '1551778025000',
+      id: '1552382129000',
       owner: 'Yeasion',
       repo: 'gitment-comments',
       
