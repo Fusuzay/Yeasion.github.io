@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://Yeasion.github.io/"/>
-  <updated>2019-03-12T09:35:46.464Z</updated>
+  <updated>2019-03-17T02:39:45.287Z</updated>
   <id>http://Yeasion.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[SCOI2010]生成字符串</title>
+    <link href="http://Yeasion.github.io/2019/03/17/SCOI2010-%E7%94%9F%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>http://Yeasion.github.io/2019/03/17/SCOI2010-生成字符串/</id>
+    <published>2019-03-17T01:22:08.000Z</published>
+    <updated>2019-03-17T02:39:45.287Z</updated>
+    
+    <content type="html"><![CDATA[<p>这题首先就得有一个画坐标系的想法，这很智障，我一开始也没有想出来。<br>我们设$X = Num[1] + Num[0]$, $Y = Num[1] - Num[0]$<br>也就是将1的个数加上0的个数设为X横坐标，把其和设为纵坐标。<br>稍微画一下图，如果我们从原点开始向右上方走(y = x)，那么就是$X + 1, Y + 1$，表示我们选择了1,，如果朝右下角走$y = - x$那么就是$X + 1, Y - 1$，表示我们选择了0。<br>很显然最后的方案数就是从原点走到$(N + M),(N - M)$节点。<br>因为无论如何$X$都是加一，所以步数一定是$N + M$步，而我们要选出$M$次向下走，方案数就是$C^{N +M} _M$。<br>当然，这是没有考虑限制情况。题目要求$1$的个数不能超过$0$的个数。发现也就是不能超过$y = - 1$这条直线。而经过直线的方案数就是$C^{N +M} _{M - 1}$<br>然后最后的答案就是</p><script type="math/tex; mode=display">C^{N +M} _M - C^{N +M} _{M - 1}</script><p>这种东西直接预处理前缀积然后逆元一下就好了…<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL ;</span><br><span class="line"><span class="keyword">const</span> LL MAXN = <span class="number">1000010</span> &lt;&lt; <span class="number">1</span> ;</span><br><span class="line"><span class="keyword">const</span> LL MAXM = <span class="number">1000010</span> &lt;&lt; <span class="number">1</span> ;</span><br><span class="line"><span class="keyword">const</span> LL Inf = <span class="number">0x7fffffff</span> ;</span><br><span class="line"><span class="keyword">const</span> LL Mod = <span class="number">20100403</span> ;</span><br><span class="line"></span><br><span class="line">LL N, M, Fac[MAXN], Inv[MAXN] ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">Read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    LL X = <span class="number">0</span>, F = <span class="number">1</span> ; <span class="keyword">char</span> ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span>) F = (ch == <span class="string">'-'</span> ? - <span class="number">1</span> : <span class="number">1</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">while</span> (ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>) X=(X&lt;&lt;<span class="number">1</span>)+(X&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>), ch = getchar() ;</span><br><span class="line">    <span class="keyword">return</span> X * F ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">QUCIK_POW</span><span class="params">(LL X, LL Y)</span> </span>&#123;</span><br><span class="line">    LL Ans = <span class="number">1</span> ; <span class="keyword">while</span> (Y) &#123;</span><br><span class="line">        <span class="keyword">if</span> (Y &amp; <span class="number">1</span>) Ans = Ans * X % Mod ;</span><br><span class="line">        X = X * X % Mod ; Y &gt;&gt;= <span class="number">1</span> ;</span><br><span class="line">    &#125;   <span class="keyword">return</span> Ans ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">C</span><span class="params">(LL X, LL Y)</span> </span>&#123;</span><br><span class="line">    LL U = Fac[X] * Inv[Y] % Mod ;</span><br><span class="line">    <span class="keyword">return</span> U * Inv[X - Y] % Mod ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    N = Read() ; M = Read() ; Fac[<span class="number">0</span>] = <span class="number">1</span> ;</span><br><span class="line">    <span class="keyword">for</span> (LL i = <span class="number">1</span> ; i &lt;= N + M ; i ++)</span><br><span class="line">        Fac[i] = Fac[i - <span class="number">1</span>] * i % Mod ;</span><br><span class="line">    Inv[N + M] = QUCIK_POW(Fac[N + M], Mod - <span class="number">2</span>) ;   </span><br><span class="line">    <span class="keyword">for</span> (LL i = N + M - <span class="number">1</span> ; i &gt;= <span class="number">0</span> ; i --)</span><br><span class="line">        Inv[i] = Inv[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % Mod ;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld"</span>, (C(N + M, M) - C(N + M, M - <span class="number">1</span>) + Mod) % Mod) ;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      生成一个由$N$个$1$和$M$个$0$组成的字符串，要求任意前缀的$1$的个数不能少于$0$的个数。求满足该条件的字符串的个数。
+    
+    </summary>
+    
+      <category term="题解" scheme="http://Yeasion.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+      <category term="各省省选" scheme="http://Yeasion.github.io/categories/%E9%A2%98%E8%A7%A3/%E5%90%84%E7%9C%81%E7%9C%81%E9%80%89/"/>
+    
+    
+      <category term="字符串" scheme="http://Yeasion.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="组合数学" scheme="http://Yeasion.github.io/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="逆元" scheme="http://Yeasion.github.io/tags/%E9%80%86%E5%85%83/"/>
+    
+  </entry>
   
   <entry>
     <title>[USACO15JAN]草鉴定</title>
@@ -138,13 +166,13 @@
       <category term="各省省选" scheme="http://Yeasion.github.io/categories/%E9%A2%98%E8%A7%A3/%E5%90%84%E7%9C%81%E7%9C%81%E9%80%89/"/>
     
     
+      <category term="前缀和" scheme="http://Yeasion.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
       <category term="树状数组" scheme="http://Yeasion.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
       <category term="数论" scheme="http://Yeasion.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
     
       <category term="莫比乌斯反演" scheme="http://Yeasion.github.io/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
-    
-      <category term="前缀和" scheme="http://Yeasion.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
   </entry>
   
@@ -194,9 +222,9 @@
       <category term="NOI" scheme="http://Yeasion.github.io/categories/%E9%A2%98%E8%A7%A3/NOI/"/>
     
     
-      <category term="前缀和" scheme="http://Yeasion.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
       <category term="贪心" scheme="http://Yeasion.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+      <category term="前缀和" scheme="http://Yeasion.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
       <category term="堆" scheme="http://Yeasion.github.io/tags/%E5%A0%86/"/>
     
@@ -252,13 +280,13 @@
     
       <category term="树状数组" scheme="http://Yeasion.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
-      <category term="线段树" scheme="http://Yeasion.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-    
-      <category term="离散化" scheme="http://Yeasion.github.io/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
-    
       <category term="组合数学" scheme="http://Yeasion.github.io/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
     
       <category term="数论" scheme="http://Yeasion.github.io/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="线段树" scheme="http://Yeasion.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+    
+      <category term="离散化" scheme="http://Yeasion.github.io/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
     
   </entry>
   
@@ -314,9 +342,9 @@
     
       <category term="图论" scheme="http://Yeasion.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
     
-      <category term="最短路" scheme="http://Yeasion.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
-    
       <category term="动态规划" scheme="http://Yeasion.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="最短路" scheme="http://Yeasion.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
     
   </entry>
   

@@ -16,12 +16,6 @@ const ap = new APlayer({
         cover: 'https://pic.superbed.cn/item/5c660aeb5f3e509ed9781e46',
       },
       {
-        name: 'ブルーバード[青鳥]',
-        artist: '生物股長',
-        url: 'http://www.ytmp3.cn/down/36498.mp3',
-        cover: 'https://ww1.sinaimg.cn/large/007i4MEmgy1g06tgdy957j30zk0k0q5a.jpg',
-      },
-      {
         name: 'アイロニ-[反语]',
         artist: '4円',
         url: 'http://www.ytmp3.cn/down/51036.mp3',
@@ -42,8 +36,14 @@ const ap = new APlayer({
       {
         name: 'Genius',
         artist: 'LSD',
-        url: 'http://www.ydj8.com/url/qq.php/213870506.mp3',
+        url: 'http://www.170mv.com/kw/other.web.no01.sycdn.kuwo.cn/resource/n3/57/26/2844699014.mp3',
         cover: 'https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=2733699664,1627965535&fm=58&bpow=1500&bpoh=1500',
+      },
+      {
+        name: 'Nevada',
+        artist: 'Vicetone',
+        url: 'http://nq01.sycdn.kuwo.cn/05467fea69ecff45cebc90b970add404/5c8d9dd5/resource/n3/37/52/2766180443.mp3',
+        cover: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552795113025&di=938a060fbaeb15fd09733e33108d8447&imgtype=0&src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2Ffcd22340068dc33576b6486c68fb7815cdf2569e.jpg',
       }
     ]
 });
