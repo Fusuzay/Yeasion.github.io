@@ -16,6 +16,12 @@ const ap = new APlayer({
         cover: 'https://pic.superbed.cn/item/5c660aeb5f3e509ed9781e46',
       },
       {
+        name: 'Live It Up',
+        artist: 'Kristian Kostov / 陈梓童',
+        url: 'http://nq01.sycdn.kuwo.cn/05467fea69ecff45cebc90b970add404/5c8d9dd5/resource/n3/37/52/2766180443.mp3',
+        cover: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552795113025&di=938a060fbaeb15fd09733e33108d8447&imgtype=0&src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2Ffcd22340068dc33576b6486c68fb7815cdf2569e.jpg',
+      },
+      {
         name: 'アイロニ-[反语]',
         artist: '4円',
         url: 'http://www.ytmp3.cn/down/51036.mp3',
@@ -24,7 +30,7 @@ const ap = new APlayer({
       {
         name: '暁の鎮魂歌',
         artist: 'Linked Horizon',
-        url: 'http://win.web.nf01.sycdn.kuwo.cn/568890173cf72c88b976fd7b3450ef3d/5c831fa2/resource/n1/47/60/3734609011.mp3',
+        url: 'http://other.web.nf01.sycdn.kuwo.cn/resource/n1/47/60/3734609011.mp3',
         cover: 'https://y.gtimg.cn/music/photo_new/T002R300x300M00000312jqw2AxkhU.jpg?max_age=2592000',
       },
       {
