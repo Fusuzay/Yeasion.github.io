@@ -409,6 +409,324 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/04/04/矩阵树定理及其应用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sue Shallow">
+      <meta itemprop="description" content="天低路细，以水为妻。秋色向南，此生过半。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏·浅">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/04/矩阵树定理及其应用/" class="post-title-link" itemprop="url">矩阵树定理及其应用</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-04 19:25:59 / 修改时间：21:15:21" itemprop="dateCreated datePublished" datetime="2019-04-04T19:25:59+08:00">2019-04-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>这个东西首次出现在周冬的国家集训队论文里面，解决的问题叫做生成树计数问题。<br>顾名思义，就是让你求一张无向图中生成树的个数。<br>首先我们要知道三个概念。</p>
+<ol>
+<li>邻接矩阵A<br>这个东西不用我说了吧，就是对于每一条边$Edge_{ij}$，矩阵的$i$行$j$列和$j$行$i$列设为1，其他设为0。</li>
+<li>度数矩阵D<br>啥意思呢，就是将每一个点的度数，其中对于每一个不相等的$i,j$有$D[i][j] = 0$</li>
+<li>基尔霍夫矩阵C<br>$C = D - A$</li>
+</ol>
+<p>而Matrix-Tree定理就是说这个无向图的生成树个数就等于基尔霍夫矩阵的任意一个$N - 1$阶主子式的行列式的绝对值。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/04/04/卢卡斯定理与扩展卢卡斯定理/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Sue Shallow">
+      <meta itemprop="description" content="天低路细，以水为妻。秋色向南，此生过半。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="苏·浅">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/04/04/卢卡斯定理与扩展卢卡斯定理/" class="post-title-link" itemprop="url">卢卡斯定理与扩展卢卡斯定理</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-04 17:48:15 / 修改时间：19:24:42" itemprop="dateCreated datePublished" datetime="2019-04-04T17:48:15+08:00">2019-04-04</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>卢卡斯定理要解决的问题很简单：</p>
+<script type="math/tex; mode=display">
+C_n^m ~mod~ p</script><p>如果$p$规定为质数，那么就用卢卡斯定理解决，否则就是扩展卢卡斯定理。<br>洛谷上两个模板题都有 <a href="https://www.luogu.org/problemnew/show/P3807" target="_blank" rel="noopener">Lucas</a> <a href="https://www.luogu.org/problemnew/show/P4720" target="_blank" rel="noopener">ExLucas</a></p>
+<h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><p>如果你不知道前置的知识的话，最好还是去系统学习一下。</p>
+<h4 id="1-乘法逆元"><a href="#1-乘法逆元" class="headerlink" title="1. 乘法逆元"></a>1. 乘法逆元</h4><blockquote>
+<p>若$Ax \equiv 1 (mod~p)$且$A$与$p$互质，则称$A$的$mod~p$意义下的乘法逆元为$X$</p>
+</blockquote>
+<p>关于求逆元：<br>因为$(a,p) = 1$<br>所以$a^{p-1} \equiv 1 (mod~p)$<br>所以$a \times a ^{p - 2} \equiv 1 (mod~p)$<br>所以$m!(n - m)!$的逆元为$(m!(n - m)!) ^{p - 2}$<br>直接快速幂就可以了。</p>
+<h4 id="2-扩展欧几里得"><a href="#2-扩展欧几里得" class="headerlink" title="2.扩展欧几里得"></a>2.扩展欧几里得</h4><blockquote>
+<p>扩展欧几里得用来在求得$gcd(a,b)$的同时，找出整数$x,y$使其满足$ax + by = gcd(a,b)$</p>
+</blockquote>
+<h4 id="3-费马小定理"><a href="#3-费马小定理" class="headerlink" title="3.费马小定理"></a>3.费马小定理</h4><blockquote>
+<p>$a^(p-1) \equiv 1 (mod~p)$。</p>
+</blockquote>
+<h4 id="4-中国剩余定理"><a href="#4-中国剩余定理" class="headerlink" title="4.中国剩余定理"></a>4.中国剩余定理</h4><p>还请移步博客<a href="https://yeasion.github.io/2019/02/15/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E4%B8%8E%E6%89%A9%E5%B1%95%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86ExCrt/">欧几里得与扩展中国剩余定理Excrt</a></p>
+<h3 id="卢卡斯定理"><a href="#卢卡斯定理" class="headerlink" title="卢卡斯定理"></a>卢卡斯定理</h3><p>证明过程：<br>首先根据组合数的只是我们可以很显然推出</p>
+<script type="math/tex; mode=display">
+C_p^i \equiv \frac pi C_{p-1}^{i-1} \equiv 0 (mod~p)</script><p>然后根据二项式定理得出：</p>
+<script type="math/tex; mode=display">
+(1 + x)^p \equiv \sum_{i=0}^p C_p^0 X^i \equiv C_p^o1^pX^0 + C^p_p1^0X^p \equiv 1 + x^p (mod~p)</script><p>然后我们继续从二项式定理推出：</p>
+<script type="math/tex; mode=display">
+C^b_a \equiv \prod_{i = 0}^p0 C_{a_ip^i}^{b_ip^i} (mod~p)</script><p>上式也就是所谓的卢卡斯定理，这玩意的用处就在于下面这个递推式：</p>
+<script type="math/tex; mode=display">
+Lucas(n,m,p) = CC_{m \% p}^{n \% p} \times Lucas(\frac np, \frac mp, p</script><p>其中$Lucas(x,0,p) = 1$且$CC_m^n = (C_m^n)^(p-2) ~mod ~p$<br>实际上就是一个费马小定理和乘法逆元。<br>根据这个东西就可以很快地求出来上面的问题了。<br>如果你看不大懂，那就只需要记结论。。。。</p>
+<script type="math/tex; mode=display">
+C_m^n ~mod~ p = (C_{m / p}^{n / p} ~mod~p) \times (C^{n ~mod~ p}_{m ~mod~ p} ~mod~p)~mod~p</script><p>然后直接递归调用$C_{m~mod~p}^{n~mod~p} ~mod~p$就可以了。<br>对于$C_m^n$的除法取模就需要用到逆元了。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span> ;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">100010</span> ;</span><br><span class="line">LL N, M, P, X[MAXN] ;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">Read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	LL X = <span class="number">0</span>, F = <span class="number">1</span> ; <span class="keyword">char</span> ch = getchar() ;</span><br><span class="line">	<span class="keyword">while</span> (ch &gt; <span class="string">'9'</span> || ch &lt; <span class="string">'0'</span>) F = (ch == <span class="string">'-'</span> ? - <span class="number">1</span> : <span class="number">1</span>), ch = getchar() ;</span><br><span class="line">	<span class="keyword">while</span> (ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>) X=(X&lt;&lt;<span class="number">1</span>)+(X&lt;&lt;<span class="number">3</span>)+(ch^<span class="number">48</span>), ch = getchar() ;</span><br><span class="line">	<span class="keyword">return</span> X * F ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">QuickPow</span><span class="params">(LL A, LL B)</span> </span>&#123;</span><br><span class="line">	LL Ans = <span class="number">1</span> ;	<span class="keyword">if</span> (! B) <span class="keyword">return</span> <span class="number">1</span> % P ;</span><br><span class="line">	<span class="keyword">while</span> (B) &#123;</span><br><span class="line">		<span class="keyword">if</span> (B &amp; <span class="number">1</span>) Ans = Ans * A % P ;</span><br><span class="line">		A = A * A % P, B &gt;&gt;= <span class="number">1</span> ;</span><br><span class="line">	&#125;	<span class="keyword">return</span> Ans ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">C</span><span class="params">(LL A, LL B)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (B &gt; A) <span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">	<span class="keyword">return</span> (X[A] * QuickPow(X[B], P - <span class="number">2</span>)) % P * QuickPow(X[A - B], P - <span class="number">2</span>) % P ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">Lucas</span><span class="params">(LL A, LL B)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (! B) <span class="keyword">return</span> <span class="number">1</span> ;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> (C(A % P, B % P) * Lucas(A / P, B / P)) % P ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T = Read() ; <span class="keyword">while</span> (T --) &#123;</span><br><span class="line">		N = Read(), M = Read(), P = Read() ;</span><br><span class="line">		X[<span class="number">0</span>] = <span class="number">1</span> ;</span><br><span class="line">		<span class="keyword">for</span> (LL i = <span class="number">1</span> ; i &lt;= P ; i ++) </span><br><span class="line">			X[i] = (X[i - <span class="number">1</span>] * i) % P ;</span><br><span class="line">		LL Ans = Lucas(N + M, N) ; </span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, Ans) ;</span><br><span class="line">	&#125;	<span class="keyword">return</span> <span class="number">0</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="扩展卢卡斯定理"><a href="#扩展卢卡斯定理" class="headerlink" title="扩展卢卡斯定理"></a>扩展卢卡斯定理</h3><p>令$P = \prod p_i^{c_i}$<br>假设我们知道$C_n^m ~mod~p_i^{c_i}$就可以直接上$Crt$，但是我们并不知道。（泪目<br>怎么求呢？<br>对于$C^n_m = \frac{n!}{(n-m)!m!}$<br>我们可以阶乘的变换。<br>假设我们现在要求$19! % 3$<br>我们将$1 \times…\times 19$中所有$3$的倍数拿出来合并。<br>那么我们就得到$\lfloor \frac{19}{3} \rfloor$个满足项，然后除以$3$之后，就得到$\lfloor \frac{19}{3} \rfloor !$,这一部分不好算，我们直接递归下去。<br>然后对于其他的项，可以看出来他们具有小于$3^k$的循环节这种东西，就可以暴力。<br>然后时间复杂度就很可观了。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/03/19/TSP-旅行商问题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1778,371 +2096,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/03/03/NOI2010-超级钢琴/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sue Shallow">
-      <meta itemprop="description" content="天低路细，以水为妻。秋色向南，此生过半。">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏·浅">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/03/NOI2010-超级钢琴/" class="post-title-link" itemprop="url">[NOI2010]超级钢琴</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-03 14:43:20" itemprop="dateCreated datePublished" datetime="2019-03-03T14:43:20+08:00">2019-03-03</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-04 17:39:54" itemprop="dateModified" datetime="2019-03-04T17:39:54+08:00">2019-03-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/题解/NOI/" itemprop="url" rel="index"><span itemprop="name">NOI</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          定义超级和弦为区间内长度处于$[L,R]$之间的一段连续区间和。两个超级和弦相同当且仅当这两个超级和弦所包含的音符集合相同。要求在序列中选出K个不同的超级和弦，使得所有超级和弦的和最大。
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/03/NOI2010-超级钢琴/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://Yeasion.github.io/2019/03/03/SCOI2009-粉刷匠/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Sue Shallow">
-      <meta itemprop="description" content="天低路细，以水为妻。秋色向南，此生过半。">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="苏·浅">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/03/03/SCOI2009-粉刷匠/" class="post-title-link" itemprop="url">[SCOI2009]粉刷匠</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-03 09:00:39 / 修改时间：14:39:24" itemprop="dateCreated datePublished" datetime="2019-03-03T09:00:39+08:00">2019-03-03</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/题解/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/题解/各省省选/" itemprop="url" rel="index"><span itemprop="name">各省省选</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          粉刷$N$条木板，每条木板有$M$个格子，只能被涂成蓝色或者红色，每次粉刷只能选择一条木板上的一段连续的格子。每个格子最多只能被粉刷一次。最多能粉刷$T$次，求最多能粉刷多少个格子。
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/03/03/SCOI2009-粉刷匠/">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2187,7 +2145,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">22</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2293,7 +2251,15 @@
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">37</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
